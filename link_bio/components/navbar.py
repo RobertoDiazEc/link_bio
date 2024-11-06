@@ -34,9 +34,9 @@ def navbar() -> rx.Component:
                 ),
                 rx.moment(MomentState.date_now, format="YYYY-MM-DD"),
                 rx.hstack(
-                    navbar_link("Nosotros", "/#"),
-                    navbar_link("Informacion", "/informar"),
-                    navbar_link("Precios", "/#"),
+                    navbar_link("Servicios", "/#"),
+                    navbar_link("Productos", "/informar"),
+                    navbar_link("Comunidad", "/#"),
                     navbar_link("Contactos", "/#"),
                     justify="end",
                     spacing="5",
@@ -81,4 +81,5 @@ def navbar() -> rx.Component:
         top="0px",
         z_index="1000",
         width="100%",
+        #background_color= "rgba(0, 0, 0, 0.5)",
 )   
