@@ -3,6 +3,7 @@ import reflex as rx
 from link_bio.components.navbar import navbar
 from link_bio.views.header.header import header
 from link_bio.views.secciones.secciones import secciones
+from link_bio.views.empresa.serempresa import serempresa
 from link_bio.views.links.links import links
 from link_bio.components.footer import footer
 import link_bio.styles.styles  as styles
@@ -19,6 +20,7 @@ def index() -> rx.Component:
          navbar(),
          header(),
          secciones(),
+         serempresa(),
         rx.vstack(
             links(),
             max_width=styles.MAX_WIDTH,
