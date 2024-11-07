@@ -25,19 +25,22 @@ def navbar() -> rx.Component:
                         height="auto",
                         border_radius="25%",
                     ),
+                    rx.link(
                     rx.heading(
-                        "CPK", 
+                        "C P K", 
                         size="7", 
                         weight="bold"
+                    ),
+                    url="/"
                     ),
                     align_items="center",
                 ),
                 rx.moment(MomentState.date_now, format="YYYY-MM-DD"),
                 rx.hstack(
-                    navbar_link("Servicios", "/#"),
+                    navbar_link("Servicios", "/servicios"),
                     navbar_link("Productos", "/informar"),
-                    navbar_link("Comunidad", "/#"),
-                    navbar_link("Contactos", "/#"),
+                    navbar_link("Comunidad", "/comunidad"),
+                    navbar_link("Contactos", "/somos"),
                     justify="end",
                     spacing="5",
                 ),

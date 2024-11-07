@@ -14,7 +14,7 @@ def seccion_web(imgavatar: str, titulo: str, pie: str) -> rx.Component:
                         ),
                         spacing="2",
                     ),
-                color_scheme="cyan",
+                color_scheme="blue",
                 background= "gray" ,
                 ),
         as_child=True,

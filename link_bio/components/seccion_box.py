@@ -32,7 +32,7 @@ def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, d
             color= "white", 
             font_size= styles.Size.DEFAULT, 
             font_weight= "bold", 
-            background_color= "rgba(0, 0, 0, 0.5)", 
+            background_color= "rgba(150, 200, 200, 0.5)", 
             padding="5px", 
             border_radius= "5px" , 
        ), 
