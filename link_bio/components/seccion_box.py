@@ -23,6 +23,7 @@ def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, d
                 detalle
             ),
          gap="2em",
+         
         ), 
          position="absolute", 
             top= "40%", 

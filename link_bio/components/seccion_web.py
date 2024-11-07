@@ -5,7 +5,8 @@ def seccion_web(imgavatar: str, titulo: str, pie: str) -> rx.Component:
     return rx.box(
                 rx.link(
                     rx.flex(
-                        rx.avatar(src=imgavatar),
+                        rx.icon(tag=imgavatar, size=35),
+                        #rx.avatar(src=imgavatar),
                         rx.box(
                             rx.heading(titulo),
                             rx.text(pie ),
@@ -13,9 +14,11 @@ def seccion_web(imgavatar: str, titulo: str, pie: str) -> rx.Component:
                         ),
                         spacing="2",
                     ),
+                color_scheme="cyan",
+                background= "gray" ,
                 ),
         as_child=True,
-        padding= "1px",
+        padding= "5px",
         border=styles.Size.ZERO,
         width="100%"
     )

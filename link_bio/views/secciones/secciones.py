@@ -7,7 +7,7 @@ def secciones() -> rx.Component:
     return rx.container(
         seccion_box(
             "imagen/servicio3.jpg",
-            "/imgen.jpg",
+            "handshake",
             "SERVICIOS",
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."
@@ -15,7 +15,7 @@ def secciones() -> rx.Component:
         rx.divider(size="4",color_scheme="red"),
         seccion_box(
             "imagen/servicio4.jpg",
-            "/imgen.jpg",
+            "package-open",
             "PRODUCTOS",
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."
@@ -23,7 +23,7 @@ def secciones() -> rx.Component:
         rx.divider(size="4",color_scheme="red"),
     seccion_box(
             "imagen/servicio1.jpg",
-            "/imgen.jpg",
+            "speech",
             "COMUNIDAD",
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."

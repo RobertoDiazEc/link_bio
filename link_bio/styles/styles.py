@@ -31,7 +31,9 @@ BASE_STYLE = {
     },
     rx.link: {
         "text_decoration" : "none",
-        "_hover" : {}
+        "_hover" : {
+             "background_color": Color.SECONDARY.value
+        }
     }
 }
 

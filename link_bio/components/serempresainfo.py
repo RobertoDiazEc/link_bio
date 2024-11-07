@@ -12,7 +12,7 @@ def serempresainfo(titulo: str, detalle: str, imginfo: str) -> rx.Component:
                 style=styles.button_title_style),
              rx.image(
                 src=imginfo, 
-                width="100%", 
+                width="70%", 
                 height="auto",
                 auto="format",
                 ),    

@@ -1,9 +1,9 @@
 from enum import Enum
 
 class Color(Enum):
-    PRIMARY = "#14A1F0"
-    SECONDARY= "#087ec4"
-    BACKGROUND= "#0C151D"
+    PRIMARY = "#02481b"  #"#14A1F0"
+    SECONDARY= "#68bc86"          #"#087ec4"
+    BACKGROUND= "#0f3c4c"
     CONTENT = "#171F26"
 
 class TextoColor(Enum):
