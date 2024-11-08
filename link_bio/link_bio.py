@@ -1,14 +1,14 @@
 
 import reflex as rx
-from link_bio.components.navbar import navbar
-from link_bio.views.header.header import header
-from link_bio.views.secciones.secciones import secciones
-from link_bio.views.empresa.serempresa import serempresa
-from link_bio.views.links.links import links
-from link_bio.components.footer import footer
-import link_bio.styles.styles  as styles
-from rxconfig import config
 
+import link_bio.styles.styles  as styles
+import link_bio.constants  as Constants
+from rxconfig import config
+from .ui.base_page import base_page
+from .views.header.header import header
+from .views.secciones.secciones import secciones
+from .views.empresa.serempresa import serempresa
+from .views.links.links import links
 
 class State(rx.State):
     """The app state."""
@@ -16,18 +16,20 @@ class State(rx.State):
     ...
 
 def index() -> rx.Component:
-    return rx.box(
-         navbar(),
-         header(),
-         secciones(),
-         serempresa(),
+    mi_base_pag = (
+        header(),
+        secciones(),
+        serempresa(),
         rx.vstack(
             links(),
             max_width=styles.MAX_WIDTH,
             width="100%",
             margin=styles.Size.BIG.value
-        ),
-        footer(),
+            ),
+        
+        )
+    return base_page(
+        mi_base_pag        
     )
 
 
@@ -35,4 +37,7 @@ app = rx.App(
     style=styles.BASE_STYLE
 )
 app.add_page(index)
+#app.add_page(servicios_page,route="/servicios")
+#app.add_page(pages.productos_pag,route="/productos")
+#app.add_page(pages.comunidad_pag,route="/comunidad")
 app._compile()

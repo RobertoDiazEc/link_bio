@@ -31,7 +31,7 @@ def navbar() -> rx.Component:
                         size="7", 
                         weight="bold"
                     ),
-                    url="/"
+                    href="/"
                     ),
                     align_items="center",
                 ),
@@ -44,6 +44,22 @@ def navbar() -> rx.Component:
                     navbar_link("Contactos", "pages/somos"),
                     justify="end",
                     spacing="5",
+                ),
+                rx.menu.root(
+                    rx.menu.trigger(
+                        rx.icon_button(
+                            rx.icon("user"),
+                            size="2",
+                            radius="full",
+                        )
+                    ),
+                    rx.menu.content(
+                        rx.menu.item("Settings"),
+                        rx.menu.item("Earnings"),
+                        rx.menu.separator(),
+                        rx.menu.item("Log out"),
+                    ),
+                    justify="end",
                 ),
                 justify="between",
                 align_items="center",
@@ -79,7 +95,7 @@ def navbar() -> rx.Component:
                 align_items="center",
             ),
         ),
-        display= "flex",
+        #display= "flex",
         #bg=rx.color("gray", 3),
         padding="1em",
         position="fixed",
@@ -87,4 +103,5 @@ def navbar() -> rx.Component:
         z_index="1000",
         width="100%",
         background_color= "#2C3E50",
+       
 )   
