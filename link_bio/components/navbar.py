@@ -11,7 +11,7 @@ class MomentState(rx.State):
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
+        rx.text(text, size="4", weight="medium", color= "#FFFFFF"), href=url
     )
 
 def navbar() -> rx.Component:
@@ -35,12 +35,13 @@ def navbar() -> rx.Component:
                     ),
                     align_items="center",
                 ),
-                rx.moment(MomentState.date_now, format="YYYY-MM-DD"),
+               
                 rx.hstack(
-                    navbar_link("Servicios", "/servicios"),
-                    navbar_link("Productos", "/informar"),
-                    navbar_link("Comunidad", "/comunidad"),
-                    navbar_link("Contactos", "/somos"),
+                    rx.badge(rx.moment(MomentState.date_now, format="YYYY-MM-DD")),
+                    navbar_link("Servicios", "pages/servicios"),
+                    navbar_link("Productos", "pages/productos"),
+                    navbar_link("Comunidad", "pages/comunidad"),
+                    navbar_link("Contactos", "pages/somos"),
                     justify="end",
                     spacing="5",
                 ),
@@ -78,11 +79,12 @@ def navbar() -> rx.Component:
                 align_items="center",
             ),
         ),
-        bg=rx.color("gray", 3),
+        display= "flex",
+        #bg=rx.color("gray", 3),
         padding="1em",
         position="fixed",
         top="0px",
         z_index="1000",
         width="100%",
-        #background_color= "rgba(0, 0, 0, 0.5)",
+        background_color= "#2C3E50",
 )   

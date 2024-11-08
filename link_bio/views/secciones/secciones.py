@@ -12,7 +12,7 @@ def secciones() -> rx.Component:
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."
             ),
-        rx.divider(size="4",color_scheme="red"),
+       rx.divider(size="4",color_scheme="mint"),   
         seccion_box(
             "imagen/servicio4.jpg",
             "package-open",
@@ -20,12 +20,13 @@ def secciones() -> rx.Component:
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."
             ),
-        rx.divider(size="4",color_scheme="red"),
-    seccion_box(
+        rx.divider(size="4",color_scheme="mint"),   
+        seccion_box(
             "imagen/servicio1.jpg",
             "speech",
             "COMUNIDAD",
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades."
             ),
+        rx.divider(size="4",color_scheme="mint"),    
 )

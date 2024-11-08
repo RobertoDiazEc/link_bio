@@ -6,11 +6,15 @@ from link_bio.components.seccion_webdet import seccion_webdet
 
 def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, detalle: str) -> rx.Component:
     return rx.box(
-        rx.image(
-                src=imagen_fondo, 
-                width="80%", 
-                height="auto",
-                auto="format",
+        rx.box(
+            rx.center(
+                rx.image(
+                        src=imagen_fondo, 
+                        width="80%", 
+                        height="auto",
+                        auto="format",
+                ),
+            ),
         ),
        rx.box( 
         rx.vstack(

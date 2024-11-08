@@ -32,7 +32,9 @@ BASE_STYLE = {
     rx.link: {
         "text_decoration" : "none",
         "_hover" : {
-             "background_color": Color.SECONDARY.value
+             #"background_color": Color.SECONDARY.value,
+             "background_color": "green",
+            "color": "white",
         }
     }
 }
