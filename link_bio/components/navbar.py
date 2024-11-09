@@ -41,7 +41,7 @@ def navbar() -> rx.Component:
                     navbar_link("Servicios", "/servicios"),
                     navbar_link("Productos", "/productos"),
                     navbar_link("Comunidad", "/comunidad"),
-                    navbar_link("Contactos", "/somos"),
+                    navbar_link("Contactos", "/contactos"),
                     justify="end",
                     spacing="5",
                 ),

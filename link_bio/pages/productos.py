@@ -9,7 +9,7 @@ from ..ui.base_page import base_page
 #@rx.page(route="pages/servicios", title="Servicios")
 def productos_page() -> rx.Component:
     mi_child = rx.center(
-            header_base("imagen/servicio4.jpg"),
+            header_base("/imagen/servicio4.jpg"),
   
             rx.vstack(
                 links(),

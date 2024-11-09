@@ -9,10 +9,10 @@ from ..ui.base_page import base_page
 #@rx.page(route="pages/servicios", title="Servicios")
 def contactos_page() -> rx.Component:
     mi_child=  rx.center(
-            header_base("imagen/servicio2.jpg"),
+            header_base("/imagen/servicio5.jpg"),
   
             rx.vstack(
-                links(),
+                rx.heading("CONTACTANOS", size=styles.Size.BIG.value),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin=styles.Size.BIG.value

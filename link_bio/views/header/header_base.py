@@ -10,6 +10,6 @@ def header_base(srcimagen: str) -> rx.Component:
                 height="auto",
                 auto="format",
                 ),
-                position= "relative",
+            position= "relative",
             width="100%"
     )       
