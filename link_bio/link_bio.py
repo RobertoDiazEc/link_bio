@@ -9,7 +9,8 @@ from .views.header.header import header
 from .views.secciones.secciones import secciones
 from .views.empresa.serempresa import serempresa
 from .views.links.links import links
-
+from .pages.servicios import servicios_page
+from . import pages
 class State(rx.State):
     """The app state."""
 
@@ -37,7 +38,7 @@ app = rx.App(
     style=styles.BASE_STYLE
 )
 app.add_page(index)
-#app.add_page(servicios_page,route="/servicios")
-#app.add_page(pages.productos_pag,route="/productos")
-#app.add_page(pages.comunidad_pag,route="/comunidad")
+app.add_page(servicios_page, route="/servicios")
+app.add_page(pages.productos_page, route="/productos")
+app.add_page(pages.comunidad_page, route="/comunidad")
 app._compile()

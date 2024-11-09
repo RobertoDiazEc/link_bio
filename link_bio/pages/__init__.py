@@ -3,7 +3,7 @@ from .productos import productos_page
 from .comunidad import comunidad_page
 from .contactos import contactos_page
 
-__all__ [
+__all__ = [
     'servicios_page',
     'productos_page',
     'comunidad_page',

@@ -1,16 +1,15 @@
 
 import reflex as rx
 
-from link_bio.views.header.header_servicio import header_servicio
-from link_bio.views.links.links import links
+from ..views.header.header_base import header_base
+from ..views.links.links import links
 import link_bio.styles.styles  as styles
-from .ui.base_page import base_page
+from ..ui.base_page import base_page
 
 #@rx.page(route="pages/servicios", title="Servicios")
 def contactos_page() -> rx.Component:
-    return base_page(
-        rx.center(
-             header_servicio(),
+    mi_child=  rx.center(
+            header_base("imagen/servicio2.jpg"),
   
             rx.vstack(
                 links(),
@@ -19,4 +18,6 @@ def contactos_page() -> rx.Component:
                 margin=styles.Size.BIG.value
             ),
          )
+    return base_page(
+       mi_child
     )

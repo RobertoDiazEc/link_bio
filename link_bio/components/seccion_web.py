@@ -1,7 +1,8 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 
-def seccion_web(imgavatar: str, titulo: str, pie: str) -> rx.Component:
+
+def seccion_web(imgavatar: str, titulo: str, pie: str, url: str) -> rx.Component:
     return rx.box(
                 rx.link(
                     rx.flex(
@@ -14,8 +15,9 @@ def seccion_web(imgavatar: str, titulo: str, pie: str) -> rx.Component:
                         ),
                         spacing="2",
                     ),
-                color_scheme="blue",
-                background= "gray" ,
+                    #color_scheme="blue",
+                    #background= "gray" ,
+                    href=url,
                 ),
         as_child=True,
         padding= "5px",

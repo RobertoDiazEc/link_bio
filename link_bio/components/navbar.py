@@ -38,10 +38,10 @@ def navbar() -> rx.Component:
                
                 rx.hstack(
                     rx.badge(rx.moment(MomentState.date_now, format="YYYY-MM-DD")),
-                    navbar_link("Servicios", "pages/servicios"),
-                    navbar_link("Productos", "pages/productos"),
-                    navbar_link("Comunidad", "pages/comunidad"),
-                    navbar_link("Contactos", "pages/somos"),
+                    navbar_link("Servicios", "/servicios"),
+                    navbar_link("Productos", "/productos"),
+                    navbar_link("Comunidad", "/comunidad"),
+                    navbar_link("Contactos", "/somos"),
                     justify="end",
                     spacing="5",
                 ),
