@@ -17,19 +17,19 @@ def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, d
             ),
         ),
        rx.box( 
-        rx.vstack(
-            seccion_web(
-                iconocab,
-                titulo,
-                subtitulo,
-                urlnb,
-            ),
-            seccion_webdet(
-                detalle
-            ),
-         gap="2em",
-         
-        ), 
+            rx.vstack(
+                seccion_web(
+                    iconocab,
+                    titulo,
+                    subtitulo,
+                    urlnb,
+                ),
+                seccion_webdet(
+                    detalle
+                ),
+            gap="2em",
+            
+            ), 
          position="absolute", 
             top= "40%", 
             left= "50%", 
