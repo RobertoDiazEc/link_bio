@@ -5,7 +5,7 @@ from link_bio.components.seccion_web import seccion_web
 from link_bio.components.seccion_webdet import seccion_webdet
 
 def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, detalle: str, urlnb: str) -> rx.Component:
-    return rx.box(
+    return rx.card(
         rx.box(
             rx.center(
                 rx.image(

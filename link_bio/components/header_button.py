@@ -8,7 +8,7 @@ def header_button(avatar: str, eslogan: str) -> rx.Component:
                 rx.avatar(fallback=avatar,
                     variant="solid",
                     ),
-                rx.text(eslogan, style=styles.button_title_style)
+                rx.text(eslogan, style=styles.title_header_style)
             ),
             position="absolute", 
             top= "50%", 

@@ -1,12 +1,13 @@
 from enum import Enum
 
 class Color(Enum):
-    PRIMARY = "#02481b"  #"#14A1F0"
-    SECONDARY= "#68bc86"          #"#087ec4"
-    BACKGROUND= "#0f3c4c"
-    CONTENT = "#171F26"
+    PRIMARY =  "#2C3E50"             #"#14A1F0" 
+    SECONDARY= "#FFFFFF"                    #"#087ec4"
+    BACKGROUND= "#ECF0F1"                    #"#0f3c4c"
+    CONTENT =  "#1ABC9C"                        #"#171F26"
 
 class TextoColor(Enum):
-    HEADER = "#F1F2F4"  
-    BODY = "#C3C7CB"  
+    HEADER = "#0f3c4c"  
+    BODY = "#000000"  
     FOOTER = "#A3ABB2"
+    

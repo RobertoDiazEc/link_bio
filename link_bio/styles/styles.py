@@ -15,6 +15,7 @@ class Size(Enum):
     DEFAULT = "1em"
     LARGE = "1.7em"
     BIG = "2em"
+    BIGN1 ="3em"
 
 # Botton
 BASE_STYLE = {
@@ -33,8 +34,8 @@ BASE_STYLE = {
         "text_decoration" : "none",
         "_hover" : {
              #"background_color": Color.SECONDARY.value,
-             "background_color": "green",
-            "color": "white",
+             "background_color": Color.CONTENT.value,
+            "color": Color.PRIMARY.value,
         }
     }
 }
@@ -44,6 +45,11 @@ title_style=dict(
     padding_top=Size.LARGE.value,
     color=TextColor.HEADER.value
 )
+
+title_header_style=dict(
+    width="100%",
+    color=Color.BACKGROUND.value
+)   
 
 button_title_style = dict(
     font_size = Size.DEFAULT.value,
