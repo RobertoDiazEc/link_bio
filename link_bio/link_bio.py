@@ -11,6 +11,7 @@ from .views.empresa.serempresa import serempresa
 from .views.links.links import links
 from .pages.servicios import servicios_page
 from . import pages
+
 class State(rx.State):
     """The app state."""
 

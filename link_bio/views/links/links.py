@@ -6,9 +6,9 @@ import link_bio.constants  as Constants
 def links() -> rx.Component:
     return rx.vstack(
         rx.heading("Servicios", style=styles.title_style),
-        link_button("youtube", Constants.YOUTUBE_URL),
-        link_button("Programas", Constants.YOUTUBE_URL),
-        link_button("Propaganda", Constants.YOUTUBE_URL),
-        link_button("Proyectos", Constants.YOUTUBE_URL)
+        link_button("youtube", Constants.YOUTUBE_URL, "truck"),
+        link_button("Programas", Constants.YOUTUBE_URL, "truck"),
+        link_button("Propaganda", Constants.YOUTUBE_URL, "truck"),
+        link_button("Proyectos", Constants.YOUTUBE_URL, "truck"),
     )
 
