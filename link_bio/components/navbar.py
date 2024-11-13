@@ -54,7 +54,7 @@ def navbar() -> rx.Component:
                         )
                     ),
                     rx.menu.content(
-                        rx.menu.item("Settings"),
+                       rx.menu.item( navbar_link( "Settings", "/menuinterno")),
                         rx.menu.item("Earnings"),
                         rx.menu.separator(),
                         rx.menu.item("Log out"),

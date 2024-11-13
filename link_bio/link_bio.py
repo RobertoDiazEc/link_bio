@@ -14,7 +14,7 @@ from . import pages
 
 class State(rx.State):
     """The app state."""
-
+   
     ...
 
 def index() -> rx.Component:
@@ -43,4 +43,6 @@ app.add_page(servicios_page, route="/servicios")
 app.add_page(pages.productos_page, route="/productos")
 app.add_page(pages.comunidad_page, route="/comunidad")
 app.add_page(pages.contactos_page, route="/contactos")
+app.add_page(pages.menuinterno_page, route="/menuinterno")
+
 app._compile()

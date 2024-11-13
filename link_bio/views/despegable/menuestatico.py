@@ -1,38 +1,105 @@
 import reflex as rx
 
-# Función que define el contenido dinámico basado en el estado
-def app():
-    # Estado para controlar qué contenido mostrar
-    current_content = rx.state("home")
+class Content(rx.State):
+    links: list[dict[str, str]] = [
+        {"label": "Usage", "link": "#usage", "color": "gray"},
+        {"label": "Position and placement", "link": "#position", "color": "gray"},
+        {"label": "With other overlays", "link": "#overlays", "color": "gray"},
+        {"label": "Manage focus", "link": "#focus", "color": "gray"},
+        {"label": "Examples", "link": "#1", "color": "gray"},
+        {"label": "Show on focus", "link": "#2", "color": "gray"},
+        {"label": "Show on hover", "link": "#3", "color": "gray"},
+        {"label": "With form", "link": "#4", "color": "gray"},
+    ]
 
-    # Función para actualizar el contenido cuando se selecciona una opción
-    def update_content(content_name):
-        current_content.set(content_name)
+    index: int = 0
+    position_y: str = "20px"
 
-    # Contenido de cada sección
-    content_map = {
-        "home": "Bienvenido a la página de inicio.",
-        "about": "Esta es la sección de información sobre nosotros.",
-        "services": "Estos son nuestros servicios.",
-        "contact": "Contáctanos por correo o teléfono.",
-    }
+    async def toggle_table_content(self, index: int, item: dict[str, str]):
+        self.links = [
+            (
+                {**data, "color": rx.color("slate", 11)}
+                if data["label"] != item["label"]
+                else {**data, "color": rx.color("slate", 12)}
+            )
+            for data in self.links
+        ]
+        self.position_y = f"{10 + (index * 30)}px"
 
-    # Menú lateral
-    sidebar = rx.column(
-        rx.button("Inicio", on_click=lambda: update_content("home"), color_scheme="teal"),
-        rx.button("Acerca de", on_click=lambda: update_content("about"), color_scheme="teal"),
-        rx.button("Servicios", on_click=lambda: update_content("services"), color_scheme="teal"),
-        rx.button("Contacto", on_click=lambda: update_content("contact"), color_scheme="teal"),
-        spacing=2
+
+def items(index: int, data: dict[str, str]):
+    return rx.hstack(
+        rx.link(
+            rx.text(
+                data["label"],
+                font_size="14px",
+                color=data["color"],
+                weight="medium",
+                on_click=Content.toggle_table_content(index, data),
+            ),
+            href=data["link"],
+            text_decoration="none",
+        ),
+        border_left=f"1px solid {rx.color('gray', 5)}",
+        width="200px",
+        height="30px",
+        align="center",
+        justify="start",
+        padding_left="15px",
+        border_radius="0px 5px 5px 0px",
     )
 
-    # Contenido principal que se actualiza según el estado
-    content_display = rx.text(content_map.get(current_content.get(), "Selecciona una opción"))
 
-    # Estructura principal con el menú lateral y el contenido dinámico
-    return rx.row(
-        rx.box(sidebar, width="200px", height="100vh", bg="gray.100", p=4),
-        rx.box(content_display, flex=1, p=4)
+def item_header():
+    return rx.hstack(
+        rx.text("Menu Items", font_size="24px", color_scheme="gray", weight="medium"),
+        rx.icon(tag="puzzle", size=12),
+        width="100%",
+        justify="between",
+        align="center",
+        border_left=f"1px solid {rx.color('gray', 5)}",
+        border_radius="0px 5px 5px 0px",
+        padding_left="15px",
+        padding_right="15px",
+        height="30px",
+        bg=rx.color("gray", 3),
     )
 
 
+def menuestatico():
+    return rx.box(
+        rx.container(
+            rx.box(
+            rx.card( item_header(),
+                    padding="35px",
+                    ),
+             width="80px",
+                height="80px",
+                border_radius="10px",
+                ),       
+            rx.card(
+rx.vstack(
+       
+        rx.vstack(
+            rx.box(
+                width="10px",
+                height="10px",
+                border_radius="10px",
+                bg=rx.color("blue"),
+                position="absolute",
+                left="-4.5px",
+                top=Content.position_y,
+                transition="all 200ms ease-out",
+            ),
+            rx.foreach(
+                Content.links,
+                lambda data, index: items(index, data),
+            ),
+            spacing="0",
+            position="relative",
+        ),
+        spacing="0",
+    )
+        )
+        )
+    )
