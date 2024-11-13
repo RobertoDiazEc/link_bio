@@ -10,10 +10,10 @@ from ..ui.base_page import base_page
 #@rx.page(route="pages/servicios", title="Servicios")
 def servicios_page() -> rx.Component:
     mi_child=  rx.box(
+        header_base("/imagen/servicio3.jpg"),
          rx.container(
-             
-                  rx.card(
-                      header_base("/imagen/servicio3.jpg"),
+               rx.card(
+                      
                       rx.box(
                           rx.heading(
                               "SERVICIOS CPK", 
@@ -32,13 +32,7 @@ def servicios_page() -> rx.Component:
                   ),
                 spacing="2",
                 width="100%",
-        
-              #
-              padding="15px",  
-            #  background_color= colors.Color.SECONDARY.value,
-              margin_bottom="0.2", 
-  
-         ), 
+           ), 
             rx.box( 
                 rx.container(   
                 rx.flex(                

@@ -7,8 +7,14 @@ class MomentState(rx.State):
 
     def update(self):
         self.date_now = datetime.now(timezone.utc)
+  
 
-
+def change_bg_color(scroll_position):
+    if scroll_position > 0:
+        return 'rgba(255, 255, 255, 0)'  # Cambiar a azul claro cuando el scroll se mueva hacia abajo
+    else:
+        return "#2C3E50"  # Mantener color verde cuando la página está en la parte superior
+    
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
         rx.text(text, size="4", weight="medium", color= "#FFFFFF"), href=url
@@ -102,6 +108,8 @@ def navbar() -> rx.Component:
         top="0px",
         z_index="1000",
         width="100%",
-        background_color= "#2C3E50",
+        transition= 'background-color 0.3s ease',
+        background_color=change_bg_color(rx.window().scroll_top),
+    
        
 )   

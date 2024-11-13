@@ -4,6 +4,7 @@ import reflex as rx
 import link_bio.styles.styles  as styles
 import link_bio.constants  as Constants
 from rxconfig import config
+
 from .ui.base_page import base_page
 from .views.header.header import header
 from .views.secciones.secciones import secciones
@@ -11,6 +12,7 @@ from .views.empresa.serempresa import serempresa
 from .views.links.links import links
 from .pages.servicios import servicios_page
 from . import pages
+
 
 class State(rx.State):
     """The app state."""
@@ -38,6 +40,7 @@ def index() -> rx.Component:
 app = rx.App(
     style=styles.BASE_STYLE
 )
+
 app.add_page(index)
 app.add_page(servicios_page, route="/servicios")
 app.add_page(pages.productos_page, route="/productos")

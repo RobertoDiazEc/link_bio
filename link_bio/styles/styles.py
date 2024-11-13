@@ -71,3 +71,50 @@ message_style = dict(
     max_width="30em",
     display="inline-block",
 )
+
+
+
+# Definir la clase CSS para el navbar
+navbar_css = """
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.navbar.transparent {
+    background-color: rgba(255, 255, 255, 0);
+}
+.navbar.dark {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+"""
+
+# Añadir el JavaScript
+navbar_js = """
+window.onscroll = function() {
+    var navbar = document.querySelector('.navbar');
+    if (window.pageYOffset > 50) {
+        navbar.classList.remove('transparent');
+        navbar.classList.add('dark');
+    } else {
+        navbar.classList.remove('dark');
+        navbar.classList.add('transparent');
+    }
+};
+"""
+
+base_navbar = dict( 
+    position= 'fixed', 
+    top= '0',
+    widt= '100%',
+    transition= 'background-color 0.3s ease',
+)
+
+base_navbar_transparent = dict( 
+    background_color= 'rgba(255, 255, 255, 0)',
+) 
+
+base_navbar_dark= dict ( 
+    background_color= 'rgba(0, 0, 0, 0.8)',
+)

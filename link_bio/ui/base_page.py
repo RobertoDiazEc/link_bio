@@ -3,6 +3,7 @@ import reflex as rx
 
 from link_bio.components.navbar import navbar
 from link_bio.components.footer import footer
+
 import link_bio.styles.styles  as styles
 
 
