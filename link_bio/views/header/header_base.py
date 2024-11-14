@@ -7,7 +7,7 @@ def header_base(srcimagen: str) -> rx.Component:
           rx.image(
                 src=srcimagen, 
                 width="100%", 
-                height="auto",
+                height="50%",
                 auto="format",
                 ),
             position= "relative",

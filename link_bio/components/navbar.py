@@ -1,4 +1,6 @@
 import reflex as rx
+
+from ..styles.colors import Color
 from datetime import datetime, timezone
 
 
@@ -7,20 +9,15 @@ class MomentState(rx.State):
 
     def update(self):
         self.date_now = datetime.now(timezone.utc)
-  
 
-def change_bg_color(scroll_position):
-    if scroll_position > 0:
-        return 'rgba(255, 255, 255, 0)'  # Cambiar a azul claro cuando el scroll se mueva hacia abajo
-    else:
-        return "#2C3E50"  # Mantener color verde cuando la página está en la parte superior
-    
+
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
         rx.text(text, size="4", weight="medium", color= "#FFFFFF"), href=url
     )
 
 def navbar() -> rx.Component:
+
     return rx.box(
       rx.desktop_only(
             rx.hstack(
@@ -102,14 +99,13 @@ def navbar() -> rx.Component:
             ),
         ),
         #display= "flex",
-        #bg=rx.color("gray", 3),
+        bg=Color.PRIMARY.value,
+        #background_color=cambionavbar.colorbase,
         padding="1em",
         position="fixed",
         top="0px",
         z_index="1000",
         width="100%",
-        transition= 'background-color 0.3s ease',
-        background_color=change_bg_color(rx.window().scroll_top),
-    
+        overflow="auto"  
        
 )   
