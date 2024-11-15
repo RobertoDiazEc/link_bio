@@ -25,7 +25,7 @@ def index() -> rx.Component:
         secciones(),
         serempresa(),
         rx.vstack(
-            links(),
+            #links(),
             max_width=styles.MAX_WIDTH,
             width="100%",
             margin=styles.Size.BIG.value
@@ -38,7 +38,12 @@ def index() -> rx.Component:
 
 
 app = rx.App(
-    style=styles.BASE_STYLE
+    style=styles.BASE_STYLE,
+     theme=rx.theme(
+        has_background=True,
+        radius="large",
+        accent_color="blue",
+    )
 )
 
 app.add_page(index)

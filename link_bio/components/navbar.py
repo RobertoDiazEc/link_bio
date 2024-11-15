@@ -17,7 +17,8 @@ def navbar_link(text: str, url: str) -> rx.Component:
     )
 
 def navbar() -> rx.Component:
-
+    
+          
     return rx.box(
       rx.desktop_only(
             rx.hstack(

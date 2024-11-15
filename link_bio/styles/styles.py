@@ -43,7 +43,9 @@ BASE_STYLE = {
 title_style=dict(
     width="100%",
     padding_top=Size.LARGE.value,
-    color=TextColor.HEADER.value
+    padding=Size.LARGE.value,
+    color=TextColor.HEADER.value,
+    
 )
 
 title_header_style=dict(

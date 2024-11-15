@@ -11,9 +11,9 @@ from ..ui.base_page import base_page
 def contactos_page() -> rx.Component:
     mi_child=  rx.center(
            # header_base("/imagen/servicio5.jpg"),
-            sidebar(),
+            #sidebar(),
             rx.vstack(
-                rx.heading("CONTACTANOS", size=styles.Size.BIG.value),
+                rx.heading("CONTACTO ", size=styles.Size.BIG.value),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin=styles.Size.BIG.value
