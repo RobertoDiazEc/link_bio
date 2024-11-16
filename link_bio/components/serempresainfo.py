@@ -9,7 +9,7 @@ def serempresainfo(titulo: str, detalle: str, imginfo: str) -> rx.Component:
            title(titulo),
             rx.text(
                 detalle,
-                style=styles.button_title_style),
+                style=styles.title_body_style),
              rx.image(
                 src=imginfo, 
                 width="70%", 

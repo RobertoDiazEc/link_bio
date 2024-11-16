@@ -45,12 +45,13 @@ def servicios_page() -> rx.Component:
                     direction="column",
                     spacing="2",
                     ),
-                 
+              width="100%",     
             padding="15px", 
             margin_bottom="0.2",  
             ),
-             
+           
          ),
+         
     )
     return base_page(
        mi_child

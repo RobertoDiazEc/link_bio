@@ -7,7 +7,7 @@ class Color(Enum):
     CONTENT =  "#1ABC9C"                        #"#171F26"
 
 class TextoColor(Enum):
-    HEADER = "#0f3c4c"  
-    BODY = "#000000"  
+    HEADER = "teal"                         #"#0f3c4c"  
+    BODY = "#0f3c4c"
     FOOTER = "#A3ABB2"
     

@@ -1,5 +1,5 @@
 import reflex as rx
-
+import link_bio.styles.styles as styles
 
 def productos(proimg: str,detalle: str) -> rx.Component:
     return rx.card(
@@ -12,6 +12,7 @@ def productos(proimg: str,detalle: str) -> rx.Component:
                 side="top",
                 pb="current",
                 ),
-                rx.text(detalle),
+                rx.text(detalle,
+                        style=styles.title_body_style),
             width="5Ovw",
         )

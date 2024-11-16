@@ -1,6 +1,7 @@
 
 import reflex as rx
 
+
 import link_bio.styles.styles  as styles
 import link_bio.constants  as Constants
 from rxconfig import config
@@ -16,8 +17,8 @@ from . import pages
 
 class State(rx.State):
     """The app state."""
-   
-    ...
+
+
 
 def index() -> rx.Component:
     mi_base_pag = (
@@ -30,19 +31,21 @@ def index() -> rx.Component:
             width="100%",
             margin=styles.Size.BIG.value
             ),
-        
+       
         )
     return base_page(
-        mi_base_pag        
+        mi_base_pag,
+        hide_navbar=False     
     )
 
 
 app = rx.App(
     style=styles.BASE_STYLE,
      theme=rx.theme(
-        has_background=True,
-        radius="large",
-        accent_color="blue",
+        appearance="light", 
+        has_background=True, 
+        radius="large", 
+        accent_color="teal"
     )
 )
 

@@ -28,5 +28,6 @@ def secciones() -> rx.Component:
             "C P K",
             "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades.",
             "/comunidad"),
-        rx.divider(size="4",color_scheme="mint"),    
+        rx.divider(size="4",color_scheme="mint"), 
+        width="100%",     
 )

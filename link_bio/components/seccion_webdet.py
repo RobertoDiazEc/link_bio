@@ -5,7 +5,7 @@ def seccion_webdet(texto: str) -> rx.Component:
     return rx.box(
         rx.text(
             texto,
-            style=styles.button_title_style,
+            style=styles.title_body_style,
             ),
         border=" 1px solid green",
         width="100%",

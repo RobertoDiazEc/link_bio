@@ -7,7 +7,7 @@ def opciones() -> rx.Component:
                    style=styles.title_style),
          rx.box(
                 rx.text("Nuestro personal tecnico visitara las instalaciones donde el cliente los necesite, para realizar la respectiva verificacion de los datos",
-                        style=styles.button_title_style),
+                        style=styles.title_body_style),
                 rx.image(
                                 src="/imagen/servicio2.jpg", 
                                 width="70%", 

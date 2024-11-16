@@ -20,6 +20,7 @@ class Size(Enum):
 # Botton
 BASE_STYLE = {
     "background_color": Color.BACKGROUND.value,
+    "breakpoints": {"520px", "768px", "1024px", "1280px", "1640px"},
     rx.button: {
         "width": "100%",
         "height": "100%",
@@ -51,7 +52,12 @@ title_style=dict(
 title_header_style=dict(
     width="100%",
     color=Color.BACKGROUND.value
-)   
+)
+
+title_body_style=dict(
+    width="100%",
+    color=TextColor.BODY.value
+)
 
 button_title_style = dict(
     font_size = Size.DEFAULT.value,
