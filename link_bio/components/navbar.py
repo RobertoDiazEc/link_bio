@@ -28,7 +28,7 @@ def navbar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        src="/logoCPK.jpg",
                         width="2.25em",
                         height="auto",
                         border_radius="25%",
@@ -77,13 +77,18 @@ def navbar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        src="/logoCPK.jpg",
                         width="2em",
                         height="auto",
                         border_radius="25%",
                     ),
+                    rx.link(
                     rx.heading(
-                        "CPK", size="6", weight="bold"
+                        "C P K", 
+                        size="7", 
+                        weight="bold"
+                    ),
+                    href="/"
                     ),
                     align_items="center",
                 ),
@@ -92,10 +97,10 @@ def navbar() -> rx.Component:
                         rx.icon("menu", size=30)
                     ),
                     rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
-                        rx.menu.item("Contact"),
+                        rx.menu.item(navbar_link( "Servicios", "/servicios")),
+                        rx.menu.item(navbar_link("Productos", "/productos")),
+                        rx.menu.item(navbar_link("Comunidad", "/comunidad")),
+                        rx.menu.item(navbar_link("Contactos", "/contactos")),
                     ),
                     justify="end",
                 ),
