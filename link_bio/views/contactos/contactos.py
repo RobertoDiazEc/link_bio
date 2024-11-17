@@ -1,9 +1,9 @@
 import reflex as rx
 
 services = [
-    ["Website Design", "Content Creation"],
-    ["UX Design", "Consulting"],
-    ["Research", "Other"],
+    ["Servicio", "Productos"],
+    ["Flotas", "Consultoria"],
+    ["Programa", "Otros"],
 ]
 
 
@@ -20,35 +20,36 @@ def check_box_item(name: str):
     return rx.box(rx.checkbox(name), width="100%")
 
 
-def forms_v1():
+def contactos():
 
-    return rx.vstack(
+    return rx.card(
         rx.vstack(
-            rx.heading("Contact our team", size="5", weight="bold"),
+            rx.heading("Necesitas mas Informacion", size="5", weight="bold"),
             rx.text(
-                "Got any questions about the product? We're here to help. Fill out the form below to get started.",
+                "Tienes preguntas sobre nuestros productos? Nosotros estamos para ayudarte. Nuesto Equipo se comunicara lo mas rapido posible.",
                 font_size="12px",
                 weight="medium",
                 color_scheme="gray",
                 text_align="center",
             ),
             width="100%",
-            spacing="1",
+            spacing="4",
             align="center",
-            padding="12px 0px",
+            padding="12px 12px",
         ),
         rx.hstack(
-            item_and_title("First Name", "First name"),
-            item_and_title("Last Name", "Last name"),
+            item_and_title("Nombre Completo", "Nombre Completo"),
             width="100%",
             display="flex",
         ),
         item_and_title("Email", "example@someplace.com"),
+        item_and_title("Celular", "0998765499"),
+        item_and_title("Ciudad", "Ciudad"),
         rx.vstack(
-            rx.text("Message", font_size="11px", color_scheme="gray", weight="medium"),
+            rx.text("Mensage", font_size="11px", color_scheme="gray", weight="medium"),
             rx.text_area(
                 width="100%",
-                placeholder="Leave us message...",
+                placeholder="consultar ...",
                 rows="5",
             ),
             width="100%",
@@ -69,15 +70,16 @@ def forms_v1():
         ),
         rx.spacer(),
         rx.button(
-            "Continue",
+            "Enviar",
             width="100%",
             cursor="pointer",
             variant="surface",
             color_scheme="gray",
         ),
         width="100%",
-        max_width="21em",
+        max_width="40em",
         height="100%",
         justify="center",
         align="center",
+        padding="25px 20px",
     )

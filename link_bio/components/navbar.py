@@ -13,12 +13,16 @@ class MomentState(rx.State):
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium", color= "teal"), href=url
+        rx.text(text, 
+                size="4", 
+                weight="medium", 
+                color= "teal"
+                ), 
+        href=url
     )
 
 def navbar() -> rx.Component:
-    
-          
+            
     return rx.box(
       rx.desktop_only(
             rx.hstack(

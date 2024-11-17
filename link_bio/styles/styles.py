@@ -6,6 +6,9 @@ from .colors import TextoColor as TextColor
 
 # Constantes
 MAX_WIDTH = "600px"
+MED_WIDTH = "300px"
+MIN_WIDTH = "100px"
+
 
 # Sizes
 class Size(Enum):
@@ -20,7 +23,7 @@ class Size(Enum):
 # Botton
 BASE_STYLE = {
     "background_color": Color.BACKGROUND.value,
-    "breakpoints": {"520px", "768px", "1024px", "1280px", "1640px"},
+    
     rx.button: {
         "width": "100%",
         "height": "100%",

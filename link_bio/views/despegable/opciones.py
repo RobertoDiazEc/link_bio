@@ -14,6 +14,6 @@ def opciones() -> rx.Component:
                                 height="auto",
                                 auto="format",
                             ),
-             width="100%",                
+            padding="15px",             
             ),       
 )

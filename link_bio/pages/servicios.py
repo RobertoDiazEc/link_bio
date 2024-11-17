@@ -11,8 +11,7 @@ from ..ui.base_page import base_page
 def servicios_page() -> rx.Component:
     mi_child=  rx.box(
         header_base("/imagen/servicio3.jpg"),
-         rx.container(
-               rx.card(
+         rx.card(
                       
                       rx.box(
                           rx.heading(
@@ -21,34 +20,38 @@ def servicios_page() -> rx.Component:
                               weight="bold", 
                               as_="h6",
                               align="center",
+                              color= styles.title_style, 
                           ),                  
-                          color= "white", 
                           font_size= styles.Size.DEFAULT, 
                           font_weight= "bold", 
-                          background_color= colors.Color.PRIMARY.value, 
+                          background_color= colors.Color.SECONDARY.value, 
                           padding="10px", 
                           border_radius= "15px" , 
                       ),
-                  ),
-                spacing="2",
+                 
+                spacing="4",
                 width="100%",
            ), 
-            rx.box( 
-                rx.container(   
+            rx.card( 
                 rx.flex(                
                     opciones(),
                     opciones(),
                     opciones(),
                     #max_width=styles.MAX_WIDTH,
-                    width="100%",
-                    margin=styles.Size.BIG.value,
+                    margin=styles.Size.DEFAULT.value,
                     direction="column",
-                    spacing="2",
+                    spacing="4",
+                    flex_wrap="wrap",
+                    width="100%",
+                    #height="100vh",
+                    margin_top="16px",
+                    padding="15px",
                     ),
+              spacing="4",      
               width="100%",     
-            padding="15px", 
-            margin_bottom="0.2",  
-            ),
+            #padding="15px", 
+            #margin_bottom="0.2",  
+    
            
          ),
          
