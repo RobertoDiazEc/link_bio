@@ -2,7 +2,7 @@
 import reflex as rx
 
 from ..views.contactos.contactos import contactos
-
+import link_bio.constants as cons
 import link_bio.styles.styles  as styles
 from ..ui.base_page import base_page
 
@@ -39,7 +39,7 @@ def contactos_page() -> rx.Component:
                                 ),
                                 spacing="2",
                             ),
-                            href="https://wa.me/11234567890?text=Hola%20quiero%20información",
+                            href=cons.WHATSAPP_URL,
                             is_external=True,
                             width="100%",
                         ),

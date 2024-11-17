@@ -3,13 +3,21 @@ import reflex as rx
 from enum import Enum
 from .colors import Color as Color
 from .colors import TextoColor as TextColor
+from .fonts import Font, FontWeight
+
 
 # Constantes
-MAX_WIDTH = "600px"
+MAX_WIDTH = "560px"
 MED_WIDTH = "300px"
 MIN_WIDTH = "100px"
 
 
+#fond sheets
+
+STYLESHEETS = [
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
+    "https://fonts.googleapis.com/css2?family=Comfortaa:wght500&display=swap"
+]
 # Sizes
 class Size(Enum):
     ZERO = "0em"
@@ -21,6 +29,8 @@ class Size(Enum):
     BIGN1 ="3em"
 
 # Botton
+# "font_family": Font.DEFAULT.value,
+# "font_weight": Font
 BASE_STYLE = {
     "background_color": Color.BACKGROUND.value,
     
