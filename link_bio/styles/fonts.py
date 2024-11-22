@@ -12,3 +12,9 @@ class Font(Enum):
 class FontWeight(Enum):
     LIGHT = "300"   
     MEDIUM ="500"
+
+class FontSize(Enum):
+    FOOTER = "12px"
+    CONTENIDO = "16px"
+    SECCIONES = "20px"
+    DEFAULT = "18px"

@@ -24,7 +24,7 @@ class Size(Enum):
     SMALL = "0.5em"
     MEDIUM = "0.8em"
     DEFAULT = "1em"
-    LARGE = "1.7em"
+    LARGE = "1.5em"
     BIG = "2em"
     BIGN1 ="3em"
 
@@ -56,8 +56,8 @@ BASE_STYLE = {
 
 title_style=dict(
     width="100%",
-    padding_top=Size.LARGE.value,
-    padding=Size.LARGE.value,
+    padding_top=Size.MEDIUM.value,
+    padding=Size.MEDIUM.value,
     color=TextColor.HEADER.value,
     
 )

@@ -4,27 +4,31 @@ import reflex as rx
 from ..views.contactos.contactos import contactos
 import link_bio.constants as cons
 import link_bio.styles.styles  as styles
+from ..styles.styles import title_style
 from ..ui.base_page import base_page
 
 #@rx.page(route="pages/servicios", title="Servicios")
 def contactos_page() -> rx.Component:
-    mi_child=  rx.center(
+    mi_child=  rx.flex(
+        rx.center(
            # header_base("/imagen/servicio5.jpg"),
-           rx.box(
-                rx.heading("CONTACTO ", 
+           rx.card(
+                rx.heading("C O N T A C T O S ", 
                        size=styles.Size.BIG.value,
-                       
+                       style=title_style
                        ),
-                max_width="50em",
-                height="100%",
-                justify="center",
-                align="center",       
+                as_child=True,
+                max_width=styles.MAX_WIDTH,
+                width="100%",
+                variant="surface",
+                color_scheme="lime",
+                  
            ),           
             rx.vstack(
                 contactos(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
-                margin=styles.Size.BIG.value
+                margin=styles.Size.BIG.value 
             ),
             rx.card(
                     rx.link(
@@ -40,19 +44,21 @@ def contactos_page() -> rx.Component:
                                 spacing="2",
                             ),
                             href=cons.WHATSAPP_URL,
+                            cursor="pointer",
                             is_external=True,
                             width="100%",
                         ),
                     as_child=True,
                     max_width=styles.MAX_WIDTH,
                     width="100%",
-                    cursor="pointer",
                     variant="surface",
-                    color_scheme="gray",
-                    margin=styles.Size.BIG.value
+                    color_scheme="lime",
+                    
                 ),
-         )
+        ),   
+    )
     return base_page(
        mi_child,
        hide_navbar=False
     )
+    

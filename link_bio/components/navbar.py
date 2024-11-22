@@ -16,7 +16,7 @@ def navbar_link(text: str, url: str) -> rx.Component:
         rx.text(text, 
                 size="4", 
                 weight="medium", 
-                color= "teal"
+                color= Color.CONTENT.value
                 ), 
         href=url
     )
@@ -27,20 +27,27 @@ def navbar() -> rx.Component:
       rx.desktop_only(
             rx.hstack(
                 rx.hstack(
-                    rx.image(
+                    rx.link(
+                        rx.hstack(
+                        rx.image(
                         src="/logoCPK.jpg",
                         width="2.25em",
                         height="auto",
                         border_radius="25%",
-                    ),
-                    rx.link(
-                    rx.heading(
+                            ),
+                        rx.heading(
                         "C P K", 
                         size="7", 
-                        weight="bold"
+                        weight="bold",
+                        color= Color.CONTENT.value
+                            ),
+                        ),
+                        href="/"
                     ),
-                    href="/"
-                    ),
+                    rx.text("Otra Forma de Moverse",
+                            size="1",
+                            weight="bold",
+                            color= Color.CONTENT.value),
                     align_items="center",
                 ),
                
@@ -62,7 +69,7 @@ def navbar() -> rx.Component:
                         )
                     ),
                     rx.menu.content(
-                       rx.menu.item( navbar_link( "Settings", "/menuinterno")),
+                       rx.menu.item( navbar_link( "Settings", "/#")),
                         rx.menu.item("Earnings"),
                         rx.menu.separator(),
                         rx.menu.item("Log out"),
@@ -108,6 +115,7 @@ def navbar() -> rx.Component:
                 align_items="center",
             ),
         ),
+        
         #display= "flex",
         bg=Color.PRIMARY.value,
         #background_color=cambionavbar.colorbase,

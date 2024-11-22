@@ -27,6 +27,11 @@ def comunidad_page() -> rx.Component:
                 ),
                 rx.card(
                     rx.text("esto es videos"),
+                    rx.video(
+                        url="/videos/prueba1.mp4",
+                        width="400px",
+                        height="auto",
+                    ),
                    id="card_videos"
                 ),
                 rx.card(

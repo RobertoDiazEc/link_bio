@@ -7,6 +7,7 @@ import link_bio.constants  as Constants
 from rxconfig import config
 
 from .ui.base_page import base_page
+
 from .views.header.header import header
 from .views.secciones.secciones import secciones
 from .views.empresa.serempresa import serempresa
@@ -22,6 +23,7 @@ class State(rx.State):
 
 def index() -> rx.Component:
     mi_base_pag = (
+       
         header(),
         secciones(),
         serempresa(),
@@ -45,11 +47,21 @@ app = rx.App(
         appearance="light", 
         has_background=True, 
         radius="large", 
-        accent_color="teal"
+        accent_color="lime"
     )
+
 )
 
-app.add_page(index)
+title = "CPK | Costo por Kilometro"
+description = ""
+preview = "/imagen/logoCPK.jpg"
+
+app.add_page(index,
+             title=title,
+             description=description,
+             image=preview,
+             )
+
 app.add_page(servicios_page, route="/servicios")
 app.add_page(pages.productos_page, route="/productos")
 app.add_page(pages.comunidad_page, route="/comunidad")

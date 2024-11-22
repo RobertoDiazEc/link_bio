@@ -1,13 +1,18 @@
 import reflex as rx
 
+from ..styles.fonts import FontSize
+from ..styles.styles import title_style
+from ..styles.colors import Color
+
 def footer_item(text: str, href: str) -> rx.Component:
-    return rx.link(rx.text(text, size="3"), href=href)
+    return rx.link(rx.text(text, size="2", font_size= FontSize.FOOTER.value), href=href)
 
 
 def footer_items_1() -> rx.Component:
     return rx.flex(
         rx.heading(
-            "PRODUCTS", size="4", weight="bold", as_="h3"
+            "PRODUCTOS", 
+            style=title_style
         ),
         footer_item("Web Design", "/#"),
         footer_item("Web Development", "/#"),
@@ -21,7 +26,7 @@ def footer_items_1() -> rx.Component:
 def footer_items_2() -> rx.Component:
     return rx.flex(
         rx.heading(
-            "RESOURCES", size="4", weight="bold", as_="h3"
+            "SERVICIOS", style=title_style
         ),
         footer_item("Blog", "/#"),
         footer_item("Case Studies", "/#"),
@@ -51,11 +56,12 @@ def socials() -> rx.Component:
 def footer() -> rx.Component:
     return rx.el.footer(
         rx.vstack(
+            rx.divider(),
             rx.flex(
                 rx.vstack(
                     rx.hstack(
                         rx.image(
-                            src="/logo.jpg",
+                            src="/logoCPK.jpg",
                             width="2.25em",
                             height="auto",
                             border_radius="25%",
@@ -64,14 +70,16 @@ def footer() -> rx.Component:
                             "C P K ",
                             size="7",
                             weight="bold",
+                            color= Color.CONTENT.value
                         ),
                         align_items="center",
                     ),
                     rx.text(
-                        "© 2024 ",
+                        "Otra Forma de Moverse  © 2024 ",
                         size="3",
                         white_space="nowrap",
                         weight="medium",
+                        color= Color.CONTENT.value
                     ),
                     spacing="4",
                     align_items=[
@@ -101,8 +109,10 @@ def footer() -> rx.Component:
                 justify="between",
                 width="100%",
             ),
+            rx.divider(),
             spacing="5",
             width="100%",
         ),
         width="100%",
+        bg=Color.PRIMARY.value,
     )
