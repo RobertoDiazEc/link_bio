@@ -26,7 +26,6 @@ def check_box_item(name: str):
 
 
 def contactos():
-
     return rx.card(
         rx.vstack(
             rx.heading("Necesitas mas Informacion", 
@@ -89,7 +88,7 @@ def contactos():
             color_scheme="lime",
         ),
         width="100%",
-        max_width="40em",
+        max_width="500em",
         height="100%",
         justify="center",
         align="center",

@@ -59,21 +59,31 @@ def footer() -> rx.Component:
             rx.divider(),
             rx.flex(
                 rx.vstack(
-                    rx.hstack(
+                    
+                rx.hstack(
+                    rx.link(
+                        rx.hstack(
                         rx.image(
-                            src="/logoCPK.jpg",
-                            width="2.25em",
-                            height="auto",
-                            border_radius="25%",
-                        ),
+                        src="/logoCPK.jpg",
+                        width="3em",
+                        height="auto",
+                        border_radius="25%",
+                            ),
                         rx.heading(
-                            "C P K ",
-                            size="7",
-                            weight="bold",
-                            color= Color.CONTENT.value
+                        "C P K", 
+                        size="7", 
+                        weight="bold",
+                        color= Color.CONTENT.value
+                            ),
                         ),
-                        align_items="center",
+                        href="/"
                     ),
+                   # rx.text("Otra Forma de Moverse",
+                   #         size="1",
+                   #         weight="bold",
+                   #         color= Color.CONTENT.value),
+                    align_items="center",
+                ),
                     rx.text(
                         "Otra Forma de Moverse  © 2024 ",
                         size="3",

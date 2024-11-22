@@ -4,6 +4,7 @@ import reflex as rx
 from ..views.header.header_base import header_base
 from ..views.productos.productos import productos
 from ..views.links.whatsapp import whatsapp
+from ..constants  import IMG_PRODUCTOS
 import link_bio.styles.styles  as styles
 import link_bio.styles.colors  as colors
 from ..ui.base_page import base_page
@@ -15,7 +16,7 @@ def productos_page() -> rx.Component:
          rx.container(
             
                rx.card(
-                  header_base("/imagen/servicio4.jpg"),  
+                  header_base(IMG_PRODUCTOS),  
                   
                       width="100%",
                       top= "25%", 

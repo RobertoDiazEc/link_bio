@@ -8,7 +8,7 @@ from rxconfig import config
 
 from .ui.base_page import base_page
 
-from .views.header.header import header
+from .views.header.header_base import header_base
 from .views.secciones.secciones import secciones
 from .views.empresa.serempresa import serempresa
 from .views.links.links import links
@@ -24,7 +24,7 @@ class State(rx.State):
 def index() -> rx.Component:
     mi_base_pag = (
        
-        header(),
+        header_base(Constants.CPK_LOGO),
         secciones(),
         serempresa(),
         rx.vstack(
@@ -54,7 +54,7 @@ app = rx.App(
 
 title = "CPK | Costo por Kilometro"
 description = ""
-preview = "/imagen/logoCPK.jpg"
+preview = Constants.CPK_LOGO
 
 app.add_page(index,
              title=title,

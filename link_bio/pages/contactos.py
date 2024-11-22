@@ -17,27 +17,14 @@ def contactos_page() -> rx.Component:
                        size=styles.Size.BIG.value,
                        style=title_style
                        ),
-                as_child=True,
-                max_width=styles.MAX_WIDTH,
-                width="100%",
-                variant="surface",
-                color_scheme="lime",
-                  
-           ),           
-            rx.vstack(
-                contactos(),
-                max_width=styles.MAX_WIDTH,
-                width="100%",
-                margin=styles.Size.BIG.value 
-            ),
-            rx.card(
-                    rx.link(
+                rx.box(
+                   rx.link(
                             rx.flex(
                                 rx.icon_button("message-circle-more"),
                                 rx.box(
-                                    rx.heading("WHATSAPP..."),
+                                    rx.heading("WHATSAPP."),
                                     rx.text(
-                                        "Para una comunicacion mas directa.",
+                                        "Comunicacion Directa.",
                                         style=styles.title_body_style,
                                     ),
                                 ),
@@ -47,14 +34,20 @@ def contactos_page() -> rx.Component:
                             cursor="pointer",
                             is_external=True,
                             width="100%",
-                        ),
-                    as_child=True,
-                    max_width=styles.MAX_WIDTH,
-                    width="100%",
-                    variant="surface",
-                    color_scheme="lime",
-                    
+                    ),
+               
                 ),
+                max_width=styles.MAX_WIDTH,
+                width="100%",
+                variant="surface",
+               ),
+                
+              
+            rx.vstack(
+                contactos(),
+                width="100%",
+                margin=styles.Size.DEFAULT.value 
+            ),
         ),   
     )
     return base_page(

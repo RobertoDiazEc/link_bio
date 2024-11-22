@@ -31,7 +31,7 @@ def navbar() -> rx.Component:
                         rx.hstack(
                         rx.image(
                         src="/logoCPK.jpg",
-                        width="2.25em",
+                        width="3em",
                         height="auto",
                         border_radius="25%",
                             ),
@@ -44,10 +44,10 @@ def navbar() -> rx.Component:
                         ),
                         href="/"
                     ),
-                    rx.text("Otra Forma de Moverse",
-                            size="1",
-                            weight="bold",
-                            color= Color.CONTENT.value),
+                   # rx.text("Otra Forma de Moverse",
+                   #         size="1",
+                   #         weight="bold",
+                   #         color= Color.CONTENT.value),
                     align_items="center",
                 ),
                

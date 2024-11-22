@@ -6,3 +6,9 @@ HIDE_NAVBAR = False
 WHATSAPP_URL = "https://wa.me/11234567890?text=Hola%20quiero%20información"
 
 REDx_URL = ""
+
+CPK_LOGO = "imagen/arcCPK.jpg"
+
+IMG_SERVICIOS = "/imagen/servicio2.jpg"
+IMG_PRODUCTOS = "/imagen/servicio4.jpg"
+IMG_COMUNIDAD = "/imagen/servicio2.jpg"
