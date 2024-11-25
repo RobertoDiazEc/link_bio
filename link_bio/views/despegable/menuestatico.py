@@ -2,14 +2,14 @@ import reflex as rx
 
 class Content(rx.State):
     links: list[dict[str, str]] = [
-        {"label": "Usage", "link": "#usage", "color": "gray"},
-        {"label": "Position and placement", "link": "#position", "color": "gray"},
-        {"label": "With other overlays", "link": "#overlays", "color": "gray"},
-        {"label": "Manage focus", "link": "#focus", "color": "gray"},
-        {"label": "Examples", "link": "#1", "color": "gray"},
-        {"label": "Show on focus", "link": "#2", "color": "gray"},
-        {"label": "Show on hover", "link": "#3", "color": "gray"},
-        {"label": "With form", "link": "#4", "color": "gray"},
+        {"label": "Usuarios", "link": "#usage", "color": "gray"},
+        {"label": "Seguimiento", "link": "#position", "color": "gray"},
+        {"label": "Productos", "link": "#overlays", "color": "gray"},
+        {"label": "Graficas", "link": "#focus", "color": "gray"},
+        {"label": "Ejemplos", "link": "#1", "color": "gray"},
+        {"label": "Empresas", "link": "#2", "color": "gray"},
+        {"label": "Recursos", "link": "#3", "color": "gray"},
+        {"label": "Salir", "link": "#4", "color": "gray"},
     ]
 
     index: int = 0
