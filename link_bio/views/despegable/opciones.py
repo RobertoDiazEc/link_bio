@@ -1,19 +1,19 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 
-def opciones() -> rx.Component:
+def opciones(titulo: str, detalle: str, imgopcion: str) -> rx.Component:
     return rx.card(
-        rx.heading("Recoleccion de Datos",
+        rx.heading(titulo,
                    style=styles.title_style),
          rx.box(
-                rx.text("Nuestro personal tecnico visitara las instalaciones donde el cliente los necesite, para realizar la respectiva verificacion de los datos",
+                rx.text(detalle,
                         style=styles.title_body_style),
                 rx.image(
-                                src="/imagen/servicio2.jpg", 
-                                width="70%", 
+                                src=imgopcion, 
+                                width="50%", 
                                 height="auto",
-                                auto="format",
+                                margin="10px",
                             ),
-            padding="15px",             
+             padding= "10px 10px",             
             ),       
 )

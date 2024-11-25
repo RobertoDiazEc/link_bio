@@ -52,22 +52,17 @@ def productos_page() -> rx.Component:
                               
                           ),  
                         productos("/imagen/servicio2.jpg",
-                                "DESCRIPCION DEL PRODUCTO 1. mirando el futuro"
+                                "Neumáticos Reencauchados",
+                                 "Llantas reencauchadas de calidad con garantía durante su vida útil."
                             ),
+                        rx.divider(size="4",color_scheme="mint"),    
                         productos("/imagen/servicio2.jpg",
-                                "DESCRIPCION DEL PRODUCTO 2. mirando el futuro"
+                                "Neumáticos Nuevos",
+                                 "Ofrecemos neumáticos eficientes para diferentes usos debidamente comprobados. "
                             ),
-                         productos("/imagen/servicio2.jpg",
-                                "DESCRIPCION DEL PRODUCTO 3. mirando el futuro"
-                            ),
-                         productos("/imagen/servicio2.jpg",
-                                "DESCRIPCION DEL PRODUCTO 4. mirando el futuro"
-                            ),
-                         productos("/imagen/servicio2.jpg",
-                                "DESCRIPCION DEL PRODUCTO 5. mirando el futuro"
-                            ),         
+                                
                 
-                background_color= styles.Color.SECONDARY.value,
+                background_color= styles.Color.BACKGROUND.value,
                 ),
         ),
             rx.container(

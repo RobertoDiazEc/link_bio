@@ -34,9 +34,13 @@ def servicios_page() -> rx.Component:
            ), 
             rx.card( 
                 rx.flex(                
-                    opciones(),
-                    opciones(),
-                    opciones(),
+                    opciones("Leasing de Neumáticos",
+                             "Con una tarifa fija por kilómetro recorrido, mantenemos su vehículo con neumáticos en óptimas condiciones.",
+                             "/imagen/leasing2.jpg"),
+                    opciones("Reembolsos",
+                             "Gestione el valor de los servicios emergentes a sus neumáticos.",
+                             "/imagen/leasing1.jpg"),
+                    
                     #max_width=styles.MAX_WIDTH,
                     margin=styles.Size.DEFAULT.value,
                     direction="column",
