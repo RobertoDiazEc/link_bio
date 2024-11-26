@@ -1,0 +1,35 @@
+name: Stats Build
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  build:
+    if: github.repository == 'RobertoDiazEc/link_bio'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: Run build script
+        run: python ./link_bio/build_remoto.sh
+
+      - name: Commit and Push changes
+        uses:  stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update static build
+          commit_user_name: Roberto Diaz Ec [github action]
+          commit_user_email: robertodiazec@gmail.com
+          commit_author: robertodiaz
+          
