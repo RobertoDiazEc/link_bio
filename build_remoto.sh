@@ -1,5 +1,4 @@
 
-mkdir link_bio
 cd link_bio
 python -m venv .venv
 source .venv/bin/activate
