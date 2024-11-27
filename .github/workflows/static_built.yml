@@ -8,6 +8,7 @@ jobs:
   build:
     if: github.repository == 'RobertoDiazEc/link_bio'
     runs-on: ubuntu-latest
+    
     permissions:
       contents: write
       pull-requests: write
@@ -22,7 +23,7 @@ jobs:
           python-version: '3.11'
           
       - name: Run build script
-        run: ./link_bio/build_remoto.sh
+        run: ./.link_bio/build_remoto.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
