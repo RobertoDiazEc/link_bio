@@ -69,6 +69,7 @@ title_header_style=dict(
 
 title_body_style=dict(
     width="100%",
+    padding="1em",
     color=TextColor.BODY.value
 )
 

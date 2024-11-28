@@ -12,11 +12,11 @@ from ..ui.base_page import base_page
 #@rx.page(route="pages/servicios", title="Servicios")
 def productos_page() -> rx.Component:
     mi_child = rx.box(
-       
+        
          rx.container(
             
                rx.card(
-                  header_base(IMG_PRODUCTOS),  
+                  header_base(IMG_PRODUCTOS),
                   
                       width="100%",
                       top= "25%", 
@@ -50,7 +50,9 @@ def productos_page() -> rx.Component:
                             style=styles.title_style,
                             align="center"
                               
-                          ),  
+                          ), 
+                    background_color= styles.Color.BACKGROUND.value,
+                ),       
                         productos("/imagen/servicio2.jpg",
                                 "Neumáticos Reencauchados",
                                  "Llantas reencauchadas de calidad con garantía durante su vida útil."
@@ -62,8 +64,7 @@ def productos_page() -> rx.Component:
                             ),
                                 
                 
-                background_color= styles.Color.BACKGROUND.value,
-                ),
+                
         ),
             rx.container(
             whatsapp(),

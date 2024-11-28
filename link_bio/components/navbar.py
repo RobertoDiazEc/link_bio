@@ -31,12 +31,12 @@ def navbar() -> rx.Component:
                         rx.hstack(
                         rx.image(
                         src="/logoCPK.jpg",
-                        width="3em",
+                        width="4em",
                         height="auto",
                         border_radius="25%",
                             ),
                         rx.heading(
-                        "C P K", 
+                        "", 
                         size="7", 
                         weight="bold",
                         color= Color.CONTENT.value
