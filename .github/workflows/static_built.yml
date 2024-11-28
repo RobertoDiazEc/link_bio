@@ -17,16 +17,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: List directory contents 
-        run: ls -R
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           
       - name: Run build script
-        run: chmod +x ./link_bio/build_remoto.sh
-             ./link_bio/build_remoto.sh
+        run: chmod +x build_remoto.sh
+             build_remoto.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
