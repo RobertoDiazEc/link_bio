@@ -84,13 +84,27 @@ def footer() -> rx.Component:
                    #         color= Color.CONTENT.value),
                     align_items="center",
                 ),
-                    rx.text(
+                rx.text(
                         "Otra Forma de Moverse  © 2024 ",
                         size="3",
                         white_space="nowrap",
                         weight="medium",
                         color= Color.CONTENT.value
                     ),
+                 rx.text(
+                        "Email: contacto@cpkm.com.co",
+                        size="3",
+                        white_space="nowrap",
+                        weight="medium",
+                        color= Color.CONTENT.value
+                    ),
+                    rx.text(
+                        "Mobil: +57 3152 225226",
+                        size="3",
+                        white_space="nowrap",
+                        weight="medium",
+                        color= Color.CONTENT.value
+                    ),    
                     spacing="4",
                     align_items=[
                         "center",

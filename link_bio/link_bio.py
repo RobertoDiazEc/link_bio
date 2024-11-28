@@ -16,8 +16,8 @@ from .pages.servicios import servicios_page
 from . import pages
 
 
-#class State(rx.State):
-#   """The app state."""
+class State(rx.State):
+   """The app state."""
 
 
 

@@ -3,6 +3,7 @@ import reflex as rx
 
 from ..views.contactos.contactos import contactos
 import link_bio.constants as cons
+from ..styles.colors import Color
 import link_bio.styles.styles  as styles
 from ..styles.styles import title_style
 from ..ui.base_page import base_page
@@ -18,6 +19,7 @@ def contactos_page() -> rx.Component:
                        style=title_style
                        ),
                 rx.box(
+                         
                    rx.link(
                             rx.flex(
                                 rx.icon_button("message-circle-more"),
@@ -34,6 +36,20 @@ def contactos_page() -> rx.Component:
                             cursor="pointer",
                             is_external=True,
                             width="100%",
+                    ),
+                    rx.text(
+                        "Email: contacto@cpkm.com.co",
+                        size="3",
+                        white_space="nowrap",
+                        weight="medium",
+                        color= Color.CONTENT.value
+                    ),
+                    rx.text(
+                        "Mobil: +57 3152 225226",
+                        size="3",
+                        white_space="nowrap",
+                        weight="medium",
+                        color= Color.CONTENT.value
                     ),
                
                 ),
