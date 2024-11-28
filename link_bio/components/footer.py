@@ -14,9 +14,9 @@ def footer_items_1() -> rx.Component:
             "PRODUCTOS", 
             style=title_style
         ),
-        footer_item("Web Design", "/#"),
-        footer_item("Web Development", "/#"),
-        footer_item("E-commerce", "/#"),
+        footer_item("Neumáticos Reencauchados", "/#"),
+        footer_item("Neumáticos Nuevos", "/#"),
+        #footer_item("E-commerce", "/#"),
         spacing="2",
         text_align=["center", "center", "start"],
         flex_direction="column",
@@ -28,9 +28,9 @@ def footer_items_2() -> rx.Component:
         rx.heading(
             "SERVICIOS", style=title_style
         ),
-        footer_item("Blog", "/#"),
-        footer_item("Case Studies", "/#"),
-        footer_item("Whitepapers", "/#"),
+        footer_item("Leasing de Neumáticos", "/#"),
+        footer_item("Reembolsos", "/#"),
+        #footer_item("Whitepapers", "/#"),
         spacing="2",
         text_align=["center", "center", "start"],
         flex_direction="column",

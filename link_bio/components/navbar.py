@@ -91,7 +91,7 @@ def navbar() -> rx.Component:
                     ),
                     rx.link(
                     rx.heading(
-                        "C P K", 
+                        "", 
                         size="7", 
                         weight="bold"
                     ),
