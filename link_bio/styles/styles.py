@@ -18,6 +18,7 @@ STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
     "https://fonts.googleapis.com/css2?family=Comfortaa:wght500&display=swap"
 ]
+
 # Sizes
 class Size(Enum):
     ZERO = "0em"
@@ -33,7 +34,8 @@ class Size(Enum):
 # "font_weight": Font
 BASE_STYLE = {
     "background_color": Color.BACKGROUND.value,
-    
+    "font_family": Font.DEFAULT.value,
+    "font_weight": FontWeight.LIGHT.value,    
     rx.button: {
         "width": "100%",
         "height": "100%",
