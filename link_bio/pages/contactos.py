@@ -4,6 +4,7 @@ import reflex as rx
 from ..views.contactos.contactos import contactos
 import link_bio.constants as cons
 from ..styles.colors import Color
+from ..styles.styles import SizeTxt
 import link_bio.styles.styles  as styles
 from ..styles.styles import title_style
 from ..ui.base_page import base_page
@@ -14,8 +15,8 @@ def contactos_page() -> rx.Component:
         rx.center(
            # header_base("/imagen/servicio5.jpg"),
            rx.card(
-                rx.heading("C O N T A C T O S ", 
-                       size=styles.Size.BIG.value,
+                rx.heading("CONTÁCTENOS ", 
+                       size=SizeTxt.BIG.value,
                        style=title_style
                        ),
                 rx.box(
@@ -26,7 +27,7 @@ def contactos_page() -> rx.Component:
                                 rx.box(
                                     rx.heading("WHATSAPP."),
                                     rx.text(
-                                        "Comunicacion Directa.",
+                                        "Comunicación Directa.",
                                         style=styles.title_body_style,
                                     ),
                                 ),

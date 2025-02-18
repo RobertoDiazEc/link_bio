@@ -5,7 +5,7 @@ from ...styles.colors import Color
 
 services = [
     ["Servicio", "Productos"],
-    ["Flotas", "Consultoria"],
+    ["Flotas", "Consultoría"],
     ["Programa", "Otros"],
 ]
 
@@ -28,10 +28,10 @@ def check_box_item(name: str):
 def contactos():
     return rx.card(
         rx.vstack(
-            rx.heading("Necesitas mas Informacion", 
+            rx.heading("Necesitas más información", 
                         style=title_style),
             rx.text(
-                "Tienes preguntas sobre nuestros productos? Nosotros estamos para ayudarte. Nuesto Equipo se comunicara lo mas rapido posible.",
+                "Tienes preguntas sobre nuestros productos? Nosotros estamos para ayudarte. Nuesto Equipo se comunicara lo más rapido posible.",
                 font_size="12px",
                 weight="medium",
                 color=Color.PRIMARY.value,

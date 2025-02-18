@@ -1,6 +1,7 @@
 import reflex as rx
 
 from ..styles.colors import Color
+from ..ui.routes import Route
 from datetime import datetime, timezone
 
 
@@ -52,30 +53,30 @@ def navbar() -> rx.Component:
                 ),
                
                 rx.hstack(
-                    rx.badge(rx.moment(MomentState.date_now, format="YYYY-MM-DD")),
-                    navbar_link("Servicios", "/servicios"),
-                    navbar_link("Productos", "/productos"),
-                    navbar_link("Comunidad", "/comunidad"),
-                    navbar_link("Contactos", "/contactos"),
+                    rx.badge(rx.moment(MomentState.date_now, format="YYYY-MM-DD"),color= Color.CONTENT.value,),
+                    navbar_link("Servicios", Route.SERVICIOS.value),
+                    navbar_link("Productos", Route.PRODUCTOS.value),
+                    navbar_link("Comunidad", Route.COMUNIDAD.value),
+                    navbar_link("Contactos", Route.CONTACTOS.value),
                     justify="end",
                     spacing="5",
                 ),
-                rx.menu.root(
-                    rx.menu.trigger(
-                        rx.icon_button(
-                            rx.icon("user"),
-                            size="2",
-                            radius="full",
-                        )
-                    ),
-                    rx.menu.content(
-                       rx.menu.item( navbar_link( "Settings", "/#")),
-                        rx.menu.item("Earnings"),
-                        rx.menu.separator(),
-                        rx.menu.item("Log out"),
-                    ),
-                    justify="end",
-                ),
+                # rx.menu.root(
+                #     rx.menu.trigger(
+                #         rx.icon_button(
+                #             rx.icon("user"),
+                #             size="2",
+                #             radius="full",
+                #         )
+                #     ),
+                #     rx.menu.content(
+                #        rx.menu.item( navbar_link( "Settings", "/#")),
+                #         rx.menu.item("Earnings"),
+                #         rx.menu.separator(),
+                #         rx.menu.item("Log out"),
+                #     ),
+                #     justify="end",
+                # ),
                 justify="between",
                 align_items="center",
              ),
@@ -104,10 +105,10 @@ def navbar() -> rx.Component:
                         rx.icon("menu", size=30)
                     ),
                     rx.menu.content(
-                        rx.menu.item(navbar_link( "Servicios", "/servicios")),
-                        rx.menu.item(navbar_link("Productos", "/productos")),
-                        rx.menu.item(navbar_link("Comunidad", "/comunidad")),
-                        rx.menu.item(navbar_link("Contactos", "/contactos")),
+                        rx.menu.item(navbar_link( "Servicios", Route.SERVICIOS.value)),
+                        rx.menu.item(navbar_link("Productos", Route.PRODUCTOS.value)),
+                        rx.menu.item(navbar_link("Comunidad", Route.COMUNIDAD.value)),
+                        rx.menu.item(navbar_link("Contactos", Route.CONTACTOS.value)),
                     ),
                     justify="end",
                 ),

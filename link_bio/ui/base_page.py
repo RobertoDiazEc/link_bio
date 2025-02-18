@@ -18,7 +18,7 @@ def base_page(child: rx.Component, hide_navbar=False, *args, **kwargs) -> rx.Com
                 rx.color_mode.button(position="bottom-left", id='mi-color-modelo-btn'),
                 footer(),
                 id="mi-box-base",
-                
+                *args, **kwargs
             )
         else:
             return rx.box(
@@ -27,5 +27,5 @@ def base_page(child: rx.Component, hide_navbar=False, *args, **kwargs) -> rx.Com
                 rx.color_mode.button(position="bottom-left", id='mi-color-modelo-btn'),
                 footer(),
                 id="mi-box-base",
-                
+                *args, **kwargs
             )    

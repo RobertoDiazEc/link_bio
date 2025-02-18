@@ -2,10 +2,11 @@ import reflex as rx
 
 from ..styles.fonts import FontSize
 from ..styles.styles import title_style
+from ..ui.routes import Route
 from ..styles.colors import Color
 
 def footer_item(text: str, href: str) -> rx.Component:
-    return rx.link(rx.text(text, size="2", font_size= FontSize.FOOTER.value), href=href)
+    return rx.link(rx.text(text, size="2", font_size= FontSize.FOOTER.value,color= Color.CONTENT.value,), href=href)
 
 
 def footer_items_1() -> rx.Component:
@@ -14,8 +15,8 @@ def footer_items_1() -> rx.Component:
             "PRODUCTOS", 
             style=title_style
         ),
-        footer_item("Neumáticos Reencauchados", "/#"),
-        footer_item("Neumáticos Nuevos", "/#"),
+        footer_item("Neumáticos Reencauchados", Route.PRODUCTOS.value),
+        footer_item("Neumáticos Nuevos", Route.PRODUCTOS.value),
         #footer_item("E-commerce", "/#"),
         spacing="2",
         text_align=["center", "center", "start"],
@@ -28,8 +29,8 @@ def footer_items_2() -> rx.Component:
         rx.heading(
             "SERVICIOS", style=title_style
         ),
-        footer_item("Leasing de Neumáticos", "/#"),
-        footer_item("Reembolsos", "/#"),
+        footer_item("Leasing de Neumáticos", Route.SERVICIOS.value),
+        footer_item("Reembolsos", Route.SERVICIOS.value),
         #footer_item("Whitepapers", "/#"),
         spacing="2",
         text_align=["center", "center", "start"],
@@ -38,7 +39,7 @@ def footer_items_2() -> rx.Component:
 
 
 def social_link(icon: str, href: str) -> rx.Component:
-    return rx.link(rx.icon(icon), href=href)
+    return rx.link(rx.icon(icon), href=href, color= Color.CONTENT.value,)
 
 
 def socials() -> rx.Component:
@@ -63,18 +64,18 @@ def footer() -> rx.Component:
                 rx.hstack(
                     rx.link(
                         rx.hstack(
-                        rx.image(
-                        src="/logoCPK.jpg",
-                        width="4em",
-                        height="auto",
-                        border_radius="25%",
-                            ),
-                        rx.heading(
-                        "", 
-                        size="7", 
-                        weight="bold",
-                        color= Color.CONTENT.value
-                            ),
+                            rx.image(
+                                src="/logoCPK.jpg",
+                                width="4em",
+                                height="auto",
+                                border_radius="25%",
+                                ),
+                            rx.heading(
+                                "", 
+                                size="7", 
+                                weight="bold",
+                                color= Color.LINK.value
+                                ),
                         ),
                         href="/"
                     ),
@@ -121,6 +122,7 @@ def footer() -> rx.Component:
             ),
             rx.divider(),
             rx.hstack(
+                
                 rx.hstack(
                     footer_item("Privacy Policy", "/#"),
                     footer_item("Terms of Service", "/#"),

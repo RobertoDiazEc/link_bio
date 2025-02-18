@@ -7,7 +7,7 @@ def informar() -> rx.Component:
     return rx.fragment(
         rx.center(
             rx.vstack(
-                rx.heading('Informar', size='lg'),
+                rx.heading('Informar', size='8'),
                 rx.text("Mi pagina informar")
             )            
         )

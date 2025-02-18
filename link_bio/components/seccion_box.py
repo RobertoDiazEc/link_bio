@@ -14,38 +14,45 @@ def seccion_box(imagen_fondo: str, iconocab: str, titulo: str, subtitulo: str, d
                         height="auto",
                         auto="format",
                 ),
-             ),  
-            
-             rx.box( 
-                    rx.vstack(
-                        seccion_web(
+             
+            ), 
+            rx.vstack(
+           
+                seccion_web(
                             iconocab,
                             titulo,
                             subtitulo,
                             urlnb,
                         ),
-                        seccion_webdet(
+             
+                    #gap="2em", 
+                   
+            ),
+            rx.center(
+                 seccion_webdet(
                             detalle
-                        ),
-                    gap="2em",
-                    
-                    ), 
-                
-                    position="relative", 
-                    top= "25%", 
-                    left= "50%", 
-                    transform= "translate(-50%, -50%)", 
-                    color= "white", 
-                    font_size= styles.Size.DEFAULT, 
-                    font_weight= "bold", 
-                    background_color= "rgba(150, 200, 200, 0.5)", 
-                    padding="15px 15px", 
-                    border_radius= "15px" , 
-                    width="80%",
-                    ), 
-             padding="1em",
-            position= "relative",
-            width="100%",
-          
+                        ), 
+            ), 
+            #  rx.box( 
+                   
+                                    
+            #         position="relative", 
+            #         top= "50%", 
+            #         left= "50%", 
+            #         transform= "translate(-50%, -50%)", 
+            #         color= "white", 
+            #         font_size= styles.Size.DEFAULT, 
+            #         font_weight= "bold", 
+            #         background_color= "rgba(150, 200, 200, 0.5)", 
+            #         padding="15px 1px", 
+            #         border_radius= "15px" , 
+            #         width="80%",
+            #     ), 
+                     
+            flex_grow="1",
+            text_align="center",            
+            padding= "15px",
+           # position= "center",
+            width="100%",          
    
 )

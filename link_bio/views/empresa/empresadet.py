@@ -11,9 +11,9 @@ class Empresadetvalores(Enum):
 #Objetivos
 
 class Empresadetobjetivos(Enum):
-    OBJETIVO1 = "Ofrecer una excelente atención a sus clientes para satisfacer sus necesidades."
-    OBJETIVO2 = "Trabajar de manera articulada  con la legislación vigente para ofrecer a nuestros clientes un ambiente de trabajo seguro."
-    OBJETIVO3 = "Diseñar e implementar estrategias de comunicación e interiorización en nuestros colaboradores de prestar servicios con calidad de acuerdo  a las necesidades de nuestros clientes."
-    OBJETIVO4 = "Mantener una operación con soluciones efectivas, impactantes y seguras para cumplir  las metas siendo una empresa rentable, eficiente y en constante desarrollo."
-    OBJETIVO5 = "Tener proveedores aliados que nos aseguren el suministro de materiales e insumos en condiciones ideales y procesos que garanticen una excelente calidad en nuestros servicios."
+    OBJETIVO1 = "Brindar una atención excepcional a nuestros clientes, enfocádos en satisfacer sus necesidades con excelencia."
+    OBJETIVO2 = "Cumplir la legislación vigente para garantizar un entorno de trabajo seguro y confiable."
+    OBJETIVO3 = "Diseñar e implementar estrategias efectivas de comunicación interna para que nuestros colaboradores ofrezcan servicios de calidad alineados a las necesidades de los clientes."
+    OBJETIVO4 = "Mantener operaciones eficientes, seguras y  con soluciones de alto impacto,asegurando el cumplimiento de metas y un desarrollo continuo."
+    OBJETIVO5 = "Contas con proveedores estratégicos que garanticen el suministro de materiales e insumos en condiciones óptimas, fortaleciendo la calidad de nuestros servicios."
     

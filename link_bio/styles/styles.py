@@ -29,6 +29,16 @@ class Size(Enum):
     BIG = "2em"
     BIGN1 ="3em"
 
+# Sizes
+class SizeTxt(Enum):
+    ZERO = "1"
+    SMALL = "2"
+    MEDIUM = "3"
+    DEFAULT = "2"
+    LARGE = "4"
+    BIG = "6"
+    BIGN1 ="8"    
+
 # Botton
 # "font_family": Font.DEFAULT.value,
 # "font_weight": Font
@@ -49,9 +59,9 @@ BASE_STYLE = {
     rx.link: {
         "text_decoration" : "none",
         "_hover" : {
-             #"background_color": Color.SECONDARY.value,
-             "background_color": Color.CONTENT.value,
-            "color": Color.PRIMARY.value,
+            #"background_color": Color.SECONDARY.value,
+            "background_color": Color.CONTENT.value,
+            "color": Color.LINK.value,
         }
     }
 }

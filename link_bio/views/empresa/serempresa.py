@@ -1,9 +1,10 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 from link_bio.components.serempresainfo import serempresainfo
+from ...constants  import IMG_MISION, IMG_SOMOS
 from ...components.serempresainfo import serempresaValores
 from ...components.serempresainfo import serempresaObjetivos
-from link_bio.components.title import title
+
 
 
 def serempresa() -> rx.Component:
@@ -15,22 +16,22 @@ def serempresa() -> rx.Component:
         ),
         serempresainfo(
             "LEMA",
-            "Una nueva forma de moverse",
+            "Otra forma de moverse",
             ""
         ),
         serempresainfo(
             "Misión",
             "Costo por Kilometro es una empresa comercializadora de productos y servicios destinados al mantenimiento preventivo y correctivo de vehículos.  Con la calidad, oportunidad, seguridad y cumplimiento necesario para lograr la satisfacción de nuestros clientes.",
-            "imagen/mision.jpg"
+            IMG_MISION
         ),
         serempresainfo(
             "Visión",
             "En el 2030 ser reconocidos como una empresa rentable con ventas de $300.000 USD/año que ofrece productos y servicios de calidad que se ajustan a las necesidades del transporte en Colombia.",
-            "imagen/somos.jpg"
+            IMG_SOMOS
         ),
         serempresaValores(
             "Valores",
-            "imagen/somos.jpg"
+            IMG_SOMOS
         ),
         serempresainfo(
             "Política de Calidad",
@@ -39,6 +40,6 @@ def serempresa() -> rx.Component:
         ),
          serempresaObjetivos(
             "Objetivos de Calidad",
-            "imagen/somos.jpg"
+            IMG_SOMOS
         ),
     )

@@ -6,6 +6,17 @@ def lang()-> rx.Component:
     return rx.script("document.documentElemt.lang='es'")
 
 preview = "/imagen/arcCPK.jpg"
+# Meta tags for the app.
+default_meta = [
+    {
+        "name": "viewport",
+        "content": "width=device-width, shrink-to-fit=no, initial-scale=1",
+    },
+    {"name": "og:type", "content": "website"},
+    {"name": "og:imagen", "content": preview},
+]
+
+
 _meta = [
      {"name": "og:type", "content": "website"},
      {"name": "og:imagen", "content": preview},

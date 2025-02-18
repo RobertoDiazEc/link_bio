@@ -1,24 +1,21 @@
-
 import reflex as rx
 
 from ..views.header.header_base import header_base
 from ..views.despegable.opciones import opciones
-from ..constants  import IMG_SERVICIOS
 from ..styles.styles import SizeTxt
 import link_bio.styles.styles  as styles
 import link_bio.styles.colors  as colors
 from ..ui.base_page import base_page
 
-
-#@rx.page(title="CPK | Servicios")
-def servicios_page() -> rx.Component:
+#@rx.page(route="pages/servicios", title="Servicios")
+def leasing_page() -> rx.Component:
     mi_child=  rx.box(
-        header_base(IMG_SERVICIOS),
+        header_base("/imagen/servicio3.jpg"),
          rx.card(
                       
                       rx.box(
                           rx.heading(
-                              "SERVICIOS CPK", 
+                              "LEASING CPK", 
                               size=SizeTxt.BIGN1.value, 
                               weight="bold", 
                               as_="h6",
@@ -37,17 +34,10 @@ def servicios_page() -> rx.Component:
            ), 
             rx.card( 
                 rx.flex(                
-                    opciones("Leasing de Neumáticos",
-                             "Con una tarifa fija por kilómetro recorrido, mantenemos su vehículo con neumáticos en óptimas condiciones.",
-                             "/imagen/leasing2.jpg",
-                             True),
-                    opciones("Reembolsos",
-                             "Gestione el valor de los servicios emergentes a sus neumáticos.",
-                             "/imagen/leasing1.jpg",
-                             False),
+                    
                     
                     #max_width=styles.MAX_WIDTH,
-                    margin=styles.Size.DEFAULT.value,
+                    margin=SizeTxt.DEFAULT.value,
                     direction="column",
                     spacing="4",
                     flex_wrap="wrap",
@@ -66,6 +56,5 @@ def servicios_page() -> rx.Component:
          
     )
     return base_page(
-       mi_child,
-       
+       mi_child
     )

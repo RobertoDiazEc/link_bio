@@ -7,7 +7,10 @@ def seccion_webdet(texto: str) -> rx.Component:
             texto,
             style=styles.title_body_style,
             ),
+        #position="relative", 
+        font_weight= "bold",   
         border=" 1px solid green",
-        width="100%",
-        padding= "5px"
+        padding= "5px",
+        border_radius= "15px" , 
+        width="80%",
 )

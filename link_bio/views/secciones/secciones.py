@@ -1,33 +1,34 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 import link_bio.constants  as Constants
+from ...ui.routes import Route
 from link_bio.components.seccion_box import seccion_box
 
 def secciones() -> rx.Component:
     return rx.container(
         seccion_box(
-            "imagen/servicio3.jpg",
+            Constants.IMG_SERVICIOS,
             "handshake",
             "SERVICIOS",
             "C P K",
-            "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades.",
-            "/servicios"),
+            "Nuestro enfoque en el gerenciamiento de neumáticos y la toma de decisiones basadas en datos, nos permiten ofrecer cómo servicio el arrendamiento de los mismos.",
+            Route.SERVICIOS.value),
        rx.divider(size="4",color_scheme="mint"),   
         seccion_box(
-            "imagen/servicio4.jpg",
+            Constants.IMG_PRODUCTOS,
             "package-open",
             "PRODUCTOS",
             "C P K",
-            "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades.",
-            "productos"),
+            "Distribuimos llantas nuevas y reencauchadas de calidad comprobada que contribuyen positivamente a incrementar la productividad de nuestros clientes.",
+            Route.PRODUCTOS.value),
         rx.divider(size="4",color_scheme="mint"),   
         seccion_box(
-            "imagen/servicio1.jpg",
+            Constants.IMG_COMUNIDAD,
             "speech",
             "COMUNIDAD",
             "C P K",
-            "Contamos con materiales de primera calidad, técnicos experimentados y un enfoque centrado en el cliente para asegurarnos de que obtiene el mejor servicio para sus necesidades.",
-            "/comunidad"),
+            "Contenidos útiles en la gestión de neumáticos.",
+            Route.COMUNIDAD.value),
         rx.divider(size="4",color_scheme="mint"), 
         width="100%",     
 )

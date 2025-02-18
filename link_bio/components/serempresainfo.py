@@ -1,8 +1,9 @@
 import reflex as rx
 import link_bio.styles.styles as styles
 from ..styles.styles import Size
+from ..styles.styles import SizeTxt
 import link_bio.constants  as Constants
-from link_bio.components.title import title
+
 from .index_imagen import imageninfo
 from ..views.empresa.empresadet import Empresadetvalores
 from ..views.empresa.empresadet import Empresadetobjetivos
@@ -10,7 +11,10 @@ from ..views.empresa.empresadet import Empresadetobjetivos
 
 def serempresainfo(titulo: str, detalle: str, imginfo: str) -> rx.Component:
     return rx.box(
-           title(titulo),
+           rx.heading(titulo,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
            rx.text(
                 detalle,
                 style=styles.title_body_style),
@@ -24,7 +28,10 @@ def serempresainfo(titulo: str, detalle: str, imginfo: str) -> rx.Component:
 
 def serempresaValores(titulop: str, imginfop: str) -> rx.Component:
     return rx.box(
-        title(titulop),
+        rx.heading(titulop,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style
+                ),
         rx.list.unordered(
             rx.list.item(Empresadetvalores.CREATIVIDAD.value),
             rx.list.item(Empresadetvalores.CUMPLIMIENTO.value),
@@ -40,7 +47,10 @@ def serempresaValores(titulop: str, imginfop: str) -> rx.Component:
 
 def serempresaObjetivos(tituloo: str, imginfoo: str) -> rx.Component:
     return rx.box(
-        title(tituloo),
+        rx.heading(tituloo,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style
+                ),
         rx.list.unordered(
             rx.list.item(Empresadetobjetivos.OBJETIVO1.value),
             rx.list.item(Empresadetobjetivos.OBJETIVO2.value),

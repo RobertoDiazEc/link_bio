@@ -4,7 +4,7 @@ import reflex as rx
 from ..views.header.header_base import header_base
 from ..views.productos.productos import productos
 from ..views.links.whatsapp import whatsapp
-from ..constants  import IMG_PRODUCTOS
+from ..constants  import IMG_PRODUCTOS, IMG_COMUNIDAD
 import link_bio.styles.styles  as styles
 import link_bio.styles.colors  as colors
 from ..ui.base_page import base_page
@@ -53,12 +53,12 @@ def productos_page() -> rx.Component:
                           ), 
                     background_color= styles.Color.BACKGROUND.value,
                 ),       
-                        productos("/imagen/servicio2.jpg",
+                        productos(IMG_COMUNIDAD,
                                 "Neumáticos Reencauchados",
                                  "Llantas reencauchadas de calidad con garantía durante su vida útil."
                             ),
                         rx.divider(size="4",color_scheme="mint"),    
-                        productos("/imagen/servicio2.jpg",
+                        productos(IMG_COMUNIDAD,
                                 "Neumáticos Nuevos",
                                  "Ofrecemos neumáticos eficientes para diferentes usos debidamente comprobados. "
                             ),
