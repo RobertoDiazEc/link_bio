@@ -25,9 +25,9 @@ jobs:
       - name: Cambiar a la carpeta de scripts 
         run: cd ./link_bio
       
-      - name: Create build env file
+      - name: Create env file
         run: |
-          cat << EOF > .build-env
+          cat << EOF > .env
             DATABASE_URL=${{ secrets.DATABASE_URL }}
           EOF  
 
