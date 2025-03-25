@@ -16,7 +16,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Deploy templates and prepare app
-RUN reflex init
+#RUN reflex init --loglevel debug
 
 # Needed until Reflex properly passes SIGTERM on backend.
 STOPSIGNAL SIGKILL
