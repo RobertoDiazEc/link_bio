@@ -16,7 +16,7 @@ def servicios_page() -> rx.Component:
         rx.box(
             #header_base_img(IMG_SERVICIOS),       
             rx.heading(
-                "SERVICIOS CPK", 
+                "SERVICIOS C P K", 
                 size=SizeTxt.BIGN1.value, 
                 weight="bold", 
                 as_="h6",
