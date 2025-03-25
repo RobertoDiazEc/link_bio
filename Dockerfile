@@ -15,12 +15,24 @@ RUN python3.12 -m venv $VIRTUAL_ENV
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-
+# Deploy templates and prepare app
+RUN reflex init
 
 # Needed until Reflex properly passes SIGTERM on backend.
 STOPSIGNAL SIGKILL
 
 # Always apply migrations before starting the backend.
-#CMD [ -d alembic ] && reflex db migrate; \
+#CMD [ -d alembic ] && reflex db migrate;\
 #   exec reflex run --env prod --backend-only
-ENTRYPOINT ["reflex", "run", "--env", "prod", "--backend-only", "--loglevel", "debug" ]    
+
+#CMD ["bash", "-c", "if [ -d alembic ]; then reflex db migrate;"]
+# CMD [ -d alembic ] && reflex db migrate; 
+# ENTRYPOINT ["reflex", "run", "--env", "prod", "--backend-only", "--loglevel", "debug" ]  
+# Copia start.sh al contenedor
+COPY start.sh /app/start.sh
+
+# Asegúrate de que sea ejecutable
+RUN chmod +x /app/start.sh
+
+# Configura el script como el comando principal
+CMD ["bash", "/app/start.sh"]  

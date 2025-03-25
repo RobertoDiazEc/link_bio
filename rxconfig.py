@@ -10,5 +10,6 @@ config = rx.Config(
         "http://localhost:3000",
         "https://cpkm.com.co"
     ],
-    db_url= DATABASE_URL
+    db_url= DATABASE_URL,
+    show_built_with_reflex=False
 )
