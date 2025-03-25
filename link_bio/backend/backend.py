@@ -189,7 +189,7 @@ class backState(rx.State):
                     self.acceso_key = False
                     
         except Exception as e:       
-            return f"Ingreso Login-Usuario {form_data.get("username")}, error:--> {e}"
+            return rx.window_alert(f"Ingreso Login-Usuario {form_data.get("username")}, error:--> {e}")
 
     @rx.event
     def crear_session(self):

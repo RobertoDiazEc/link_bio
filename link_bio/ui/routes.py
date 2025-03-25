@@ -16,7 +16,7 @@ class Route(Enum):
     PDFVIEWER = "/pdf/mostrar_pdf"
     PDFVIEW2 = "/mostrar_pdf"
     API_PDF= "http://localhost:8000/api/contrato-pdf/"
-    FORMULARIO = ""
+    FORMULARIO = "https://forms.gle/YmRdHXBYY5AQr2wb6"
     
 
 
