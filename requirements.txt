@@ -2,3 +2,6 @@ reflex==0.7.0
 python-dotenv
 python-decouple
 psycopg2-binary
+bcrypt
+fpdf2
+jinja2

@@ -1,0 +1,69 @@
+Anexo 2  
+
+VALORES POR mm 
+
+NUEVAS MARCA 
+
+TIER 1  GOODYEAR 
+ $30    |MICHELIN 
+        BRIDGESTONE 
+        PIRELLI 
+        CONTINENTAL 
+
+TIER 2  KUMHO 
+ $24    KANKOOK 
+        GENERAL 
+        BFGOODRICH 
+        TRIANGLE 
+        FIRESTONE 
+
+TIER 3  AEOLUS 
+ $21    CHENG SANG 
+        FULL RUN 
+        BARUM 
+        MARSHAL 
+        SIERRA 
+        STEELMARK 
+        FENIXWAY 
+
+TIER 4  COMPASAL 
+ $19    POWER TRACK 
+        ADVENTUS 
+        OTRAS (TIER4) 
+
+ 
+
+
+ 
+
+ 
+
+REENCAUCHE MARCA 
+
+TIER 1  GOODYEAR 
+ $15    MICHELIN 
+        BRIDGESTONE 
+        PIRELLI 
+        CONTINENTAL 
+
+TIER 2  KUMHO 
+ $14    KANKOOK 
+        GENERAL 
+        BFGOODRICH 
+        TRIANGLE 
+        FIRESTONE 
+
+TIER 3  AEOLUS 
+ $12    CHENG SANG 
+        FULL RUN 
+        BARUM 
+        MARSHAL 
+        SIERRA 
+        STEELMARK 
+        FENIXWAY 
+
+TIER 4  COMPASAL 
+ $12    POWER TRACK 
+        ADVENTUS 
+        OTRAS (TIER4) 
+

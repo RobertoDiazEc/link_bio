@@ -2,6 +2,7 @@ import reflex as rx
 from decouple import config
 
 DATABASE_URL = config("DATABASE_URL")
+#DATABASE_URL = config("DATABASE_URL_TEST")
 
 config = rx.Config(
     app_name="link_bio",

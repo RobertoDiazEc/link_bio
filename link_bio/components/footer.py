@@ -124,7 +124,7 @@ def footer() -> rx.Component:
             rx.hstack(
                 
                 rx.hstack(
-                    footer_item("Privacy Policy", "/#"),
+                    footer_item("Privacy Policy", Route.PRIVACYPOLICY.value),
                     footer_item("Terms of Service", "/#"),
                     footer_item("Developer: REDx Soluciones", "/#"),
                     spacing="6",

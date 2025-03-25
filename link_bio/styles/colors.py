@@ -5,10 +5,14 @@ class Color(Enum):
     SECONDARY= "#a6ccb9"                    #"#087ec4"
     BACKGROUND= "#ECF0F1"                    #"#0f3c4c"
     CONTENT =  "#88D62A"
-    LINK = "#1B7348"                        #"#171F26"
+    LINK = "#1B7348" 
+    LEASING= "#EAEAEA" 
+                          #"#171F26"
 
 class TextoColor(Enum):
     HEADER = "#88D62A"                               #"teal"                         #"#0f3c4c"  
     BODY = "#0f3c4c"
     FOOTER = "#A3ABB2"
+    USUARIO= "#356298"
+    LEASING= "#404040"
     

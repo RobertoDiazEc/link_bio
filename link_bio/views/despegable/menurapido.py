@@ -1,5 +1,6 @@
 import reflex as rx
 from ...constants import WHATSAPP_URL
+from ...ui.routes import Route
 
 
 class SemiMenuServicios(rx.ComponentState):
@@ -9,6 +10,8 @@ class SemiMenuServicios(rx.ComponentState):
         ruta="/"+nombre
         if nombre =="whatsapp":
             ruta= WHATSAPP_URL
+        if nombre =="leasing":
+            ruta= Route.LEASING.value
         return rx.redirect(ruta)
 
     @rx.event
@@ -23,7 +26,7 @@ class SemiMenuServicios(rx.ComponentState):
                 rx.icon_button(
                     rx.icon(icon, padding="2px"),
                     variant="soft",
-                    color_scheme="gray",
+                    color_scheme="mint",
                     size="3",
                     cursor="pointer",
                     radius="full",

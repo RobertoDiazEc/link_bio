@@ -53,24 +53,24 @@ def productos_page() -> rx.Component:
                           ), 
                     background_color= styles.Color.BACKGROUND.value,
                 ),       
-                        productos(IMG_COMUNIDAD,
-                                "Neumáticos Reencauchados",
-                                 "Llantas reencauchadas de calidad con garantía durante su vida útil."
-                            ),
-                        rx.divider(size="4",color_scheme="mint"),    
-                        productos(IMG_COMUNIDAD,
-                                "Neumáticos Nuevos",
-                                 "Ofrecemos neumáticos eficientes para diferentes usos debidamente comprobados. "
-                            ),
+                productos(IMG_COMUNIDAD,
+                        "Neumáticos Reencauchados",
+                            "Llantas reencauchadas de calidad con garantía durante su vida útil."
+                    ),
+                rx.divider(size="4",color_scheme="mint"),    
+                productos(IMG_COMUNIDAD,
+                        "Neumáticos Nuevos",
+                            "Ofrecemos neumáticos eficientes para diferentes usos debidamente comprobados. "
+                    ),
                                 
                 
                 
         ),
-            rx.container(
+        rx.container(
             whatsapp(),
             width="25%",
             ),
-         )
+    )
     return base_page(
        mi_child 
     )

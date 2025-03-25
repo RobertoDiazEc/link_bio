@@ -1,9 +1,9 @@
 
 import reflex as rx
 
-from ..views.header.header_base import header_base
-from ..views.despegable.opciones import opciones
-from ..constants  import IMG_SERVICIOS
+from ..views.header.header_base import header_base_img
+from ..views.despegable.opciones import opciones, opciones2
+from ..constants  import IMG_SERVICIOS, IMG_LEASING2, IMG_LEASING1
 from ..styles.styles import SizeTxt
 import link_bio.styles.styles  as styles
 import link_bio.styles.colors  as colors
@@ -13,56 +13,34 @@ from ..ui.base_page import base_page
 #@rx.page(title="CPK | Servicios")
 def servicios_page() -> rx.Component:
     mi_child=  rx.box(
-        header_base(IMG_SERVICIOS),
-         rx.card(
-                      
-                      rx.box(
-                          rx.heading(
-                              "SERVICIOS CPK", 
-                              size=SizeTxt.BIGN1.value, 
-                              weight="bold", 
-                              as_="h6",
-                              align="center",
-                              color= styles.title_style, 
-                          ),                  
-                          font_size= styles.Size.DEFAULT, 
-                          font_weight= "bold", 
-                          background_color= colors.Color.SECONDARY.value, 
-                          padding="10px", 
-                          border_radius= "15px" , 
-                      ),
-                 
-                spacing="4",
-                width="100%",
-           ), 
-            rx.card( 
-                rx.flex(                
-                    opciones("Leasing de Neumáticos",
-                             "Con una tarifa fija por kilómetro recorrido, mantenemos su vehículo con neumáticos en óptimas condiciones.",
-                             "/imagen/leasing2.jpg",
-                             True),
-                    opciones("Reembolsos",
-                             "Gestione el valor de los servicios emergentes a sus neumáticos.",
-                             "/imagen/leasing1.jpg",
-                             False),
-                    
-                    #max_width=styles.MAX_WIDTH,
-                    margin=styles.Size.DEFAULT.value,
-                    direction="column",
-                    spacing="4",
-                    flex_wrap="wrap",
-                    width="100%",
-                    #height="100vh",
-                    margin_top="16px",
-                    padding="15px",
+        rx.box(
+            #header_base_img(IMG_SERVICIOS),       
+            rx.heading(
+                "SERVICIOS CPK", 
+                size=SizeTxt.BIGN1.value, 
+                weight="bold", 
+                as_="h6",
+                align="center",
+                color= styles.title_style,
+            ),
+            opciones2("Arrendamiento de Neumáticos CPK. ",
+                             "Con una tarifa fija por kilómetro recorrido, mantenemos su vehículo con neumáticos en óptimas condiciones. ",
+                             "Al registrarse podrá conocer la tarifa aplicable a su operación.",
+                             IMG_LEASING2,
                     ),
-              spacing="4",      
-              width="100%",     
-            #padding="15px", 
-            #margin_bottom="0.2",  
-    
-           
-         ),
+             opciones("Reembolsos",
+                             "Gestione el valor de los servicios emergentes a sus neumáticos.",
+                             IMG_LEASING1,
+                             False,
+                    ),        
+            width="100%", 
+            background_image= f"url({IMG_SERVICIOS})",
+            background_size="cover",
+            background_position="center",
+            background_repeat="no-repeat",
+            padding="10px",           
+        ),  
+        
          
     )
     return base_page(

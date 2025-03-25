@@ -8,16 +8,17 @@ from ..models import ClienteL
 class baseState(rx.State):
     """The base state for the app."""
 
-    user: Optional[ClienteL] = None
+    user: ClienteL = ClienteL()
 
     def logout(self):
         """Log out a user."""
         self.reset()
-        return rx.redirect(Route.LEASING)
+        return rx.redirect(Route.INDEX)
 
     def check_login(self):
         """Check if a user is logged in."""
-        if not self.logged_in:
+        print(self.user)
+        if self.user.id == None:
             return rx.redirect(Route.LOGINCPK)
 
     @rx.var

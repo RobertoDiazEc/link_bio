@@ -85,6 +85,14 @@ title_body_style=dict(
     color=TextColor.BODY.value
 )
 
+title_text_style=dict(
+    width="100%",
+    padding="10px",
+    size="6em",
+    color=TextColor.BODY.value
+)
+
+
 button_title_style = dict(
     font_size = Size.DEFAULT.value,
     color=TextColor.HEADER.value
@@ -92,6 +100,17 @@ button_title_style = dict(
 
 button_body_style = dict(
     font_size = Size.SMALL.value
+)
+
+background_base_imagen = dict( 
+    width = "300px",
+    height = "300px",
+    background_image = ('ruta/a/tu/imagen.jpg'),
+    background_size = "cover",
+    background_position = "center",
+    background_repeat = "no_repeat",
+    background_attachment = "fixed",
+    background_blend_mode = "overlay",    
 )
 
 # Common styles for questions and answers.

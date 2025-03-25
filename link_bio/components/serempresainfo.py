@@ -25,6 +25,21 @@ def serempresainfo(titulo: str, detalle: str, imginfo: str) -> rx.Component:
             width="100%"
         )
 
+def serempresainfolista(titulo: str, detalle: str) -> rx.Component:
+    return rx.box(
+           rx.heading(titulo,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+           rx.text(
+                detalle,
+                style=styles.title_body_style),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        )
+
 
 def serempresaValores(titulop: str, imginfop: str) -> rx.Component:
     return rx.box(

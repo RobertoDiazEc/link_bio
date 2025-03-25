@@ -12,8 +12,10 @@ from .views.header.header_base import header_base
 from .views.secciones.secciones import secciones
 from .views.empresa.serempresa import serempresa
 from .views.links.links import links
-from .state.base import baseState
+#from .state.base import baseState
+from .backend.backend import backState
 from . import pages, leasing
+from .api.views.downloadcontrato import get_contrato_pdf
 
 
 
@@ -51,6 +53,16 @@ app = rx.App(
 
 )
 
+#paginas con rutas dinamicas
+
+# app.add_page(leasing.leasing_page, title="CPK | Leasing",
+#              route=Route.LEASING.value,
+#              on_load= backState.check_login())
+app.add_page(leasing.login_page, title="CPK Registro", route=Route.LOGINCPK.value)
+app.add_page(leasing.signup_page, title="CPK Usuarios", route=Route.USERCONTACTO.value)
+app.add_page(leasing.resetear_page, title="CPK Resetear", route=Route.RESETKEY.value)
+
+#paginas principales
 title = "CPK | Costo por Kilometro"
 description = ""
 preview = Constants.CPK_LOGO
@@ -65,10 +77,13 @@ app.add_page(pages.servicios_page, title="CPK | Servicios", route=Route.SERVICIO
 app.add_page(pages.productos_page, title="CPK | Productos", route=Route.PRODUCTOS.value)
 app.add_page(pages.comunidad_page, title="CPK | Comunidad", route=Route.COMUNIDAD.value)
 app.add_page(pages.contactos_page, title="CPK | Contactos", route=Route.CONTACTOS.value)
-app.add_page(pages.menuinterno_page, title="CPK | Servicios", route="/menuinterno")
-app.add_page(leasing.leasing_page, title="CPK | Leasing", route=Route.LEASING.value, on_load= baseState.check_login())
-app.add_page(leasing.login_page, title="CPK Registro", route=Route.LOGINCPK.value)
-app.add_page(leasing.signup_page, title="CPK Usuarios", route=Route.USERCONTACTO.value)
+app.add_page(pages.privacy_policy_page, title="CPK | Privacidad", route=Route.PRIVACYPOLICY.value)
+app.add_page(pages.mostrar_pdf_page, title="CPK | PDFs", route=Route.PDFVIEWER.value)
+app.add_page(pages.app_page, title="CPK | APp", route="/app")
+
+app.api.add_api_route(
+    "/api/contrato-pdf/{supplier_id}", get_contrato_pdf, methods=["GET"])
+
 
 
 

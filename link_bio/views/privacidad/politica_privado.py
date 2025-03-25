@@ -1,0 +1,179 @@
+import reflex as rx
+import link_bio.styles.styles as styles
+from link_bio.components.serempresainfo import serempresainfo
+from ...views.empresa.empresadet import EmpresPoliticaPrivacidad
+from ...styles.styles import Size
+from ...styles.styles import SizeTxt
+
+
+
+def politicainfo() -> rx.Component:
+    return rx.container(
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLTITULO.value,
+            EmpresPoliticaPrivacidad.POLTITULODETALLE.value,
+            ""
+        ),
+        rx.box(
+           rx.heading( EmpresPoliticaPrivacidad.POLDEFINICION.value,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+            rx.list.unordered(
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA1.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA2.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA3.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA4.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA5.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA6.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA7.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA8.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA9.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA10.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA11.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA12.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA13.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA14.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDEFINICIONLISTA15.value),
+            ),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        ),
+        rx.box(
+           rx.heading( EmpresPoliticaPrivacidad.POLPRINCIPIOSTITULO.value,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+            rx.list.unordered(
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA1.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA2.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA3.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA4.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA5.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA6.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLPRINCIPIOSLISTA7.value),
+            ),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        ),
+        rx.box(
+           rx.heading( EmpresPoliticaPrivacidad.POLFINALIDADTITULO.value,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+            rx.text(
+                EmpresPoliticaPrivacidad.POLFINALIDADDETALLE.value,
+                style=styles.title_body_style),    
+            rx.list.unordered(
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA1.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA2.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA3.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA4.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA5.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA6.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA7.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA8.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA9.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA10.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA11.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA12.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA13.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA14.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA15.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA16.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA17.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA18.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA19.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA20.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA21.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLFINALIDADLISTA22.value),
+            ),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLTRATAIMAGENTITULO.value,
+            EmpresPoliticaPrivacidad.POLTRATAIMAGENDETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLALMACENTITULO.value,
+            EmpresPoliticaPrivacidad.POLALMACENDETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLRESPONSABLETITULO.value,
+            EmpresPoliticaPrivacidad.POLRESPONSABLEDETALLE.value,
+            ""
+        ),
+        rx.box(
+           rx.heading( EmpresPoliticaPrivacidad.POLDERECHOTITULO.value,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+            rx.text(
+                EmpresPoliticaPrivacidad.POLDERECHODETALLE.value,
+                style=styles.title_body_style),     
+            rx.list.unordered(
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA1.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA2.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA3.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA4.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA5.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDERECHOLISTA6.value),
+            ),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        ),
+        rx.box(
+           rx.heading( EmpresPoliticaPrivacidad.POLDATOSTITULO.value,
+                size=SizeTxt.BIG.value,
+                style=styles.title_style,
+                ),
+            rx.text(
+                EmpresPoliticaPrivacidad.POLDATOSDETALLE.value,
+                style=styles.title_body_style),     
+            rx.list.unordered(
+                rx.list.item(EmpresPoliticaPrivacidad.POLDATOSLISTA1.value),
+                rx.list.item(EmpresPoliticaPrivacidad.POLDATOSLISTA2.value),
+            ),
+            rx.divider(),            
+            padding=Size.MEDIUM.value,
+            border=styles.Size.ZERO,
+            width="100%"
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLREVOCATORIATITULO.value,
+            EmpresPoliticaPrivacidad.POLREVOCATORIADETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLVIGENCIATITULO.value,
+            EmpresPoliticaPrivacidad.POLVIGENCIADETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLHABEASTITULO.value,
+            EmpresPoliticaPrivacidad.POLHABEASDETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLTRANSMISIONTITULO.value,
+            EmpresPoliticaPrivacidad.POLTRANSMISIONDETALLE.value,
+            ""
+        ),
+        serempresainfo(
+            EmpresPoliticaPrivacidad.POLMODIFICATITULO.value,
+            EmpresPoliticaPrivacidad.POLMODIFICADETALLE.value,
+            ""
+        ),
+       
+    )
