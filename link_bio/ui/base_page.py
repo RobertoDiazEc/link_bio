@@ -39,7 +39,7 @@ def base_page(child: rx.Component, hide_navbar=False, *args, **kwargs) -> rx.Com
                 rx.color_mode.button(position="bottom-left", id='mi-color-modelo-btn'),
                 footer(),
                 rx.cond(
-                    LocalStorageState.autcookie == "",
+                    LocalStorageState.botoncookie,
                     alert_dialog2(LocalStorageState.on_load()),
                 ),
                 id="mi-box-base",
