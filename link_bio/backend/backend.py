@@ -245,6 +245,7 @@ class backState(rx.State):
                         username= self.user_actual.username,
                         leasing=self.tarifas_cliente.valor,
                         ruta= "normal",
+                        imagenplaca= self.name_imagen,
                         Precio_cal= 0,
                         created_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                         **form_data

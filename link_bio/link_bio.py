@@ -16,6 +16,7 @@ from .views.links.links import links
 from .backend.backend import backState
 from . import pages, leasing
 from .api.views.downloadcontrato import get_contrato_pdf
+from .api.views.downloadimagen import get_placa_imagen
 
 
 
@@ -83,6 +84,8 @@ app.add_page(pages.app_page, title="CPK | APp", route="/app")
 
 app.api.add_api_route(
     "/api/contrato-pdf/{supplier_id}", get_contrato_pdf, methods=["GET"])
+app.api.add_api_route(
+    "/api/placa-imagen/{supplier_id}", get_placa_imagen, methods=["GET"])
 
 
 
