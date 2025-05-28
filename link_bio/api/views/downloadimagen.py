@@ -1,8 +1,13 @@
 import reflex as rx
+from fastapi import FastAPI, Depends
 from fastapi.responses import FileResponse
 import os
 
 
+# Create a FastAPI app
+api_imgplaca_app = FastAPI(title="API for Download Imagen Placa")
+# Add routes to the FastAPI app
+@api_imgplaca_app.get("/api/placa-imagen/{supplier_id}")
 async def get_placa_imagen(supplier_id: str):
     file_path = rx.get_upload_dir() / f"{supplier_id}"
 
@@ -14,4 +19,4 @@ async def get_placa_imagen(supplier_id: str):
             filename=f"{supplier_id}"
         )
     else:
-        return {"error": "Document not found"}
+        return dict(message= "Documento de imagen no encontrado en el servidor")

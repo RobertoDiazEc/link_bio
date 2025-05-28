@@ -15,9 +15,8 @@ from .views.links.links import links
 #from .state.base import baseState
 from .backend.backend import backState
 from . import pages, leasing
-from .api.views.downloadcontrato import get_contrato_pdf
-from .api.views.downloadimagen import get_placa_imagen
-
+from .api.views.downloadcontrato import api_contrato_app
+from .api.views.downloadimagen import api_imgplaca_app
 
 
 
@@ -45,6 +44,7 @@ def index() -> rx.Component:
 app = rx.App(
     stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLE,
+    api_transformer=(api_contrato_app, api_imgplaca_app),
      theme=rx.theme(
         appearance="light", 
         has_background=True, 
@@ -82,12 +82,13 @@ app.add_page(pages.privacy_policy_page, title="CPK | Privacidad", route=Route.PR
 app.add_page(pages.mostrar_pdf_page, title="CPK | PDFs", route=Route.PDFVIEWER.value)
 app.add_page(pages.app_page, title="CPK | APp", route="/app")
 
-app.api.add_api_route(
-    "/api/contrato-pdf/{supplier_id}", get_contrato_pdf, methods=["GET"])
-app.api.add_api_route(
-    "/api/placa-imagen/{supplier_id}", get_placa_imagen, methods=["GET"])
+# app.api.add_api_route(
+#     "/api/contrato-pdf/{supplier_id}", get_contrato_pdf, methods=["GET"])
 
+# app.api.add_api_route(
+#     "/api/placa-imagen/{supplier_id}", get_placa_imagen, methods=["GET"])
 
+# Create a Reflex app with the FastAPI app as the API transformer
 
 
 
