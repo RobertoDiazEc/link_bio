@@ -59,7 +59,7 @@ def index():
         ),
         rx.cond(
             StateImagen.video,
-            rx.video(url=rx.get_upload_url(StateImagen.video)),
+            rx.video(src=rx.get_upload_url(StateImagen.video)),
         ),
         padding="5em",
     )
