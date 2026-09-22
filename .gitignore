@@ -182,7 +182,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-alembic/
-alembic.ini
+# alembic/ tracked explicitly (migrations are source code)
+# alembic.ini
 # Local Pi runtime state
 .atl/
