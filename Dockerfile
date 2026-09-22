@@ -15,14 +15,11 @@ RUN uv venv /app/.venv
 
 WORKDIR /app
 
-# Copy lockfile and pyproject.toml first (better caching)
-COPY uv.lock pyproject.toml /app/
+# Copy all source first (uv sync needs src/ for editable install)
+COPY . /app/
 
 # Install dependencies (frozen lockfile, no dev dependencies)
 RUN uv sync --frozen --no-dev
-
-# Copy source code
-COPY . /app/
 
 # Prepare Reflex (init is needed to validate the app structure)
 RUN /app/.venv/bin/reflex init
