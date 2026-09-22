@@ -66,7 +66,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="Nombres", 
                                         type="text",
-                                        on_blur=AuthState.set_nombre,
+                                        on_blur= lambda valor:AuthState.update_field("nombre",valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -83,7 +83,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="Apellidos", 
                                         type="text",
-                                        on_blur=AuthState.set_apellido,
+                                        on_blur= lambda valor: AuthState.update_field("apellido",valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -100,7 +100,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="user@cpkm.com.co", 
                                         type="email",
-                                        on_blur=AuthState.set_email,
+                                        on_blur=lambda valor: AuthState.update_field("email", valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -117,7 +117,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="099999999", 
                                         type="tel",
-                                        on_blur=AuthState.set_celular,
+                                        on_blur=lambda valor: AuthState.update_field("celular",valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -143,7 +143,7 @@ def signup_page() -> rx.Component:
                                         placeholder="numero nit o rut", 
                                         type="text",
                                         max_length = 9,
-                                        on_blur=AuthState.set_nitrut,
+                                        on_blur=lambda valor: AuthState.update_field("nitrut", valor)
                                     ),
                                     as_child=True,
                                 ),
@@ -160,7 +160,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="Nombre Empresa", 
                                         type="text",
-                                        on_blur=AuthState.set_nombre_empresa,
+                                        on_blur=lambda valor: AuthState.update_field("nombre_empresa", valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -177,7 +177,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="Representante", 
                                         type="text",
-                                        on_blur=AuthState.set_representante,
+                                        on_blur=lambda valor: AuthState.update_field("representante", valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -194,7 +194,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="ciudad", 
                                         type="text",
-                                        on_blur=AuthState.set_ciudad,
+                                        on_blur=lambda valor: AuthState.update_field("ciudad", valor),
                                     ),
                                     as_child=True,
                                 ),
@@ -225,7 +225,7 @@ def signup_page() -> rx.Component:
                                     rx.input(
                                         placeholder="Username", 
                                         type="text",
-                                        on_blur=AuthState.set_username,
+                                        on_blur=lambda valor: AuthState.update_field("username", valor)
                                     ),
                                     as_child=True,
                                 ),
@@ -244,7 +244,7 @@ def signup_page() -> rx.Component:
                                         type="password",
                                         min_length=8,
                                         max_length=25,
-                                        on_blur=AuthState.set_password,
+                                        on_blur=lambda valor: AuthState.update_field("password", valor)
                                     ),
                                     as_child=True,
                                 ),
@@ -263,7 +263,7 @@ def signup_page() -> rx.Component:
                                         type="password",
                                         min_length=8,
                                         max_length=25,
-                                        on_blur=AuthState.set_confirm_password,
+                                        on_blur=lambda valor: AuthState.update_field("confirm_password", valor),
                                     ),
                                     as_child=True,
                                 ),

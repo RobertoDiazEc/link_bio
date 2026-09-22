@@ -3,6 +3,7 @@ import reflex as rx
 from ..styles.fonts import FontSize
 from ..styles.styles import title_style
 from ..ui.routes import Route
+from link_bio.constants import FACEBOOK_URL, TWITTER_URL, INSTAGRAM_URL, LINKEDIN_URL, WEB_URL_REDX 
 from ..styles.colors import Color
 
 def footer_item(text: str, href: str) -> rx.Component:
@@ -39,15 +40,15 @@ def footer_items_2() -> rx.Component:
 
 
 def social_link(icon: str, href: str) -> rx.Component:
-    return rx.link(rx.icon(icon), href=href, color= Color.CONTENT.value,)
+    return rx.link(rx.icon(icon), href=href, color= Color.CONTENT.value, is_external=True,)
 
 
 def socials() -> rx.Component:
     return rx.flex(
-        social_link("instagram", "/#"),
-        social_link("twitter", "/#"),
-        social_link("facebook", "/#"),
-        social_link("linkedin", "/#"),
+        social_link("circle-stop", INSTAGRAM_URL),
+        social_link("message-circle", TWITTER_URL),
+        social_link("notebook_pen", FACEBOOK_URL),
+        social_link("link_2_off", LINKEDIN_URL),
         spacing="3",
         justify="end",
         width="100%",
@@ -126,7 +127,7 @@ def footer() -> rx.Component:
                 rx.hstack(
                     footer_item("Privacy Policy", Route.PRIVACYPOLICY.value),
                     footer_item("Terms of Service", "/#"),
-                    footer_item("Developer: REDx Soluciones", "/#"),
+                    footer_item("Developer: REDx Soluciones", WEB_URL_REDX),
                     spacing="6",
                     align="center",
                     width="100%",

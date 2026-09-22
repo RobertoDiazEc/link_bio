@@ -110,7 +110,11 @@ class backState(rx.State):
     @rx.event
     def intentos_permitidos(self):
         self.num_intentos = self.num_intentos + 1
-            
+    
+    @rx.event
+    def update_field(self, field_name: str, value: str):
+        setattr(self, field_name, value)
+
     @rx.event
     async def imagen_placa(self, files: list[rx.UploadFile]):
         """Manejar la subida de archivo(s).

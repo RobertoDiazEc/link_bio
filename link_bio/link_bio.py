@@ -6,17 +6,17 @@ import link_bio.styles.styles  as styles
 import link_bio.constants  as Constants
 from rxconfig import config
 
-from .ui.base_page import base_page
-from .ui.routes import Route
-from .views.header.header_base import header_base
-from .views.secciones.secciones import secciones
-from .views.empresa.serempresa import serempresa
-from .views.links.links import links
+from link_bio.ui.base_page import base_page
+from link_bio.ui.routes import Route
+from link_bio.views.header.header_base import header_base
+from link_bio.views.secciones.secciones import secciones
+from link_bio.views.empresa.serempresa import serempresa
+from link_bio.views.links.links import links
 #from .state.base import baseState
-from .backend.backend import backState
+from link_bio.backend.backend import backState
 from . import pages, leasing
-from .api.views.downloadcontrato import api_contrato_app
-from .api.views.downloadimagen import api_imgplaca_app
+from link_bio.api.views.downloadcontrato import api_contrato_app
+from link_bio.api.views.downloadimagen import api_imgplaca_app
 
 
 

@@ -1,5 +1,10 @@
 # direcciones y recursos de la web
 YOUTUBE_URL = "https://youtube.com"
+FACEBOOK_URL = "https://www.facebook.com/"
+TWITTER_URL = "https://twitter.com/"
+INSTAGRAM_URL = "https://www.instagram.com/"
+LINKEDIN_URL = "https://www.linkedin.com/"
+WEB_URL_REDX = "https://redxsoluciones.vercel.app"
 
 HIDE_NAVBAR = False
 

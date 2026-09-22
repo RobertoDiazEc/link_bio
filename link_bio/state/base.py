@@ -20,7 +20,11 @@ class baseState(rx.State):
         print(self.user)
         if self.user.id == None:
             return rx.redirect(Route.LOGINCPK)
-
+    
+    @rx.event
+    def update_field(self, field_name: str, value: str):
+        setattr(self, field_name, value)
+    
     @rx.var
     def logged_in(self) -> bool:
         """Check if a user is logged in."""

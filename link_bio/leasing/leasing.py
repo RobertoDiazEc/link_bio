@@ -187,7 +187,7 @@ def leasing_page() -> rx.Component:
                                         "Recorrido Km/mes",
                                         "Recorrido Mensual Promedio",
                                         "kilometros",                                        
-                                        backState.set_val_kilometros,
+                                        lambda valor: backState.update_field("val_kilometros", valor),
                                     ),
                                     campo_input(
                                         "Numero de Placa",

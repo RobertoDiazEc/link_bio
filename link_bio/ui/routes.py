@@ -15,7 +15,7 @@ class Route(Enum):
     RESETKEY = "/resetear"
     PDFVIEWER = "/pdf/mostrar_pdf"
     PDFVIEW2 = "/mostrar_pdf"
-    API_PDF= "http://localhost:8000/api/contrato-pdf/"
+    API_PDF= "/api/contrato-pdf/"
     FORMULARIO = "https://forms.gle/YmRdHXBYY5AQr2wb6"
     
 

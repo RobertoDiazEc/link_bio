@@ -137,7 +137,7 @@ class Tarifas(rx.Model, table=True):
     dimensioness: Dimensiones = Relationship(back_populates='tarifadimension')
     operacion_id: int = Field(default=None, foreign_key='operacion.id')
     operacions: Operacion = Relationship(back_populates='tarifaoperacion')
-    tipo_id: int = Field(default=None, foreign_key='tipo_vehiculo.id')
+    tipo_id: Optional[int] = Field(default=None, nullable=True, foreign_key='tipo_vehiculo.id')
     tipo_vehiculos: Tipo_Vehiculo = Relationship(back_populates='tarifatipo')
 
 
