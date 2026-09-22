@@ -13,6 +13,7 @@ config = rx.Config(
         "https://cpkm.com.co"
     ],
     db_url= DATABASE_URL,
+    backend_host="0.0.0.0",
     show_built_with_reflex=False,
     plugins=[
         rx.plugins.TailwindV4Plugin(),
