@@ -1,5 +1,6 @@
 import reflex as rx
 from reflex.plugins.sitemap import SitemapPlugin
+from reflex.plugins import RadixThemesPlugin
 from decouple import config
 
 DATABASE_URL = config("DATABASE_URL")
@@ -13,6 +14,16 @@ config = rx.Config(
     ],
     db_url= DATABASE_URL,
     show_built_with_reflex=False,
-    plugins=[rx.plugins.TailwindV4Plugin()],
+    plugins=[
+        rx.plugins.TailwindV4Plugin(),
+        RadixThemesPlugin(
+            theme=rx.theme(
+                appearance="light",
+                has_background=True,
+                radius="large",
+                accent_color="lime"
+            )
+        )
+    ],
     disable_plugins =[SitemapPlugin],
 )

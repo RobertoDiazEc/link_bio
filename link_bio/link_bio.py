@@ -45,13 +45,6 @@ app = rx.App(
     stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLE,
     api_transformer=(api_contrato_app, api_imgplaca_app),
-     theme=rx.theme(
-        appearance="light", 
-        has_background=True, 
-        radius="large", 
-        accent_color="lime"
-    )
-
 )
 
 #paginas con rutas dinamicas

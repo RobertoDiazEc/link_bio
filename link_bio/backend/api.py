@@ -1,8 +1,9 @@
 from datetime import datetime, timedelta
-from typing import Union
+from typing import Union, Optional
 
 import reflex as rx
-from sqlmodel import String, asc, cast, desc, func, or_, select
+from pydantic import BaseModel
+from sqlmodel import String, SQLModel, Field, asc, cast, desc, func, or_, select
 
 
 def _get_percentage_change(
@@ -18,7 +19,10 @@ def _get_percentage_change(
     return percentage_change
 
 
-class Customer(rx.Model, table=True):
+class Customer(SQLModel, table=True):
+    """The customer model."""
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     """The customer model."""
 
     name: str
@@ -37,7 +41,7 @@ class Customer(rx.Model, table=True):
 #                             "user",
 #                         ),
 
-class MonthValues(rx.Base):
+class MonthValues(BaseModel):
     """Values for a month."""
 
     num_customers: int = 0

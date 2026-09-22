@@ -2,15 +2,18 @@ import reflex as rx
 import sqlalchemy
 
 from typing import List, Optional
-from sqlmodel import Field, Relationship
+from sqlmodel import Field, Relationship, SQLModel
 from datetime import datetime, timezone
 
 def get_utc_now() -> datetime:
     return datetime.now(timezone.utc)
 
 
-class ClienteL(rx.Model, table=True):
+class ClienteL(SQLModel, table=True):
     """A table of clientes."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False)
     apellido: str = Field(nullable=False)
     email: str = Field(nullable=False)
@@ -35,8 +38,11 @@ class ClienteL(rx.Model, table=True):
     )
 
 
-class UserSesion(rx.Model, table=True):
+class UserSesion(SQLModel, table=True):
     """A table of Users."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombrelogin: str = Field(index=True)
     cliente_id: int = Field(default=None, foreign_key='clientel.id')
     clientel: ClienteL = Relationship(back_populates="usersesions")
@@ -61,38 +67,56 @@ class UserSesion(rx.Model, table=True):
         back_populates="usersesionl"
     )
 
-class Tipo_Vehiculo(rx.Model, table=True):
+class Tipo_Vehiculo(SQLModel, table=True):
     """A table of tipo_vehiculo."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False, index=True, unique=True)
     valor: Optional[int] = None
     estado: str = Field(default="AC", max_length=2)
     tarifatipo: List['Tarifas'] = Relationship(back_populates='tipo_vehiculos')
 
 
-class Servicio(rx.Model, table=True):
+class Servicio(SQLModel, table=True):
     """A table of servicios.""" 
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     name: str = Field(nullable=False, unique=True)
     valor: Optional[int] = None
     estado: str = Field(default="AC", max_length=2)  
 
-class Sector(rx.Model, table=True):
+class Sector(SQLModel, table=True):
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False, unique=True)
     valor: Optional[int] = None
     estado: str = Field(default="AC", max_length=2)      
 
-class Operacion(rx.Model, table=True):
+class Operacion(SQLModel, table=True):
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False, index=True)
     valor: Optional[int] = None
     estado: str = Field(default="AC", max_length=2)
     tarifaoperacion: List['Tarifas'] = Relationship(back_populates='operacions')
 
-class Dimensiones(rx.Model, table=True):
+class Dimensiones(SQLModel, table=True):
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False, index=True, unique=True)
     valor: Optional[int] = None
     estado: str = Field(default="AC", max_length=2)
     tarifadimension: List['Tarifas'] = Relationship(back_populates='dimensioness')       
 
-class Config_Empresa(rx.Model, table=True):
+class Config_Empresa(SQLModel, table=True):
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombre: str = Field(nullable=False)
     direccion: str
     nit: Optional[int] = None
@@ -106,8 +130,11 @@ class Config_Empresa(rx.Model, table=True):
     administrador: str
     estado: str = Field(default="AC", max_length=2)
 
-class Tarifas(rx.Model, table=True):
+class Tarifas(SQLModel, table=True):
     """A table of tarifas."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     tipo: str = Field(nullable=False, index=True)
     operacion: str = Field(nullable=False, index=True)
     dimension: str = Field(nullable=False, index=True)
@@ -141,8 +168,11 @@ class Tarifas(rx.Model, table=True):
     tipo_vehiculos: Tipo_Vehiculo = Relationship(back_populates='tarifatipo')
 
 
-class LeasingCli(rx.Model, table=True):
+class LeasingCli(SQLModel, table=True):
     """A table of clientes."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     placa: str = Field(nullable=False, max_length=6)
     tipo: str = Field(nullable=False)
     servicio: str = Field(nullable=False)
@@ -170,7 +200,10 @@ class LeasingCli(rx.Model, table=True):
     tarifasu: Tarifas = Relationship(back_populates='leasingclis')
    
     
-class Contactos(rx.Model, table=True):
+class Contactos(SQLModel, table=True):
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+
     nombres: str = Field(nullable=False, index=True)
     correo: str = Field(nullable=False, unique=True)
     titulo: str = Field(nullable=False)
