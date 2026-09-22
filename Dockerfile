@@ -13,8 +13,11 @@ RUN pip install "uv==${UV_VERSION}"
 # Create venv
 RUN uv venv /app/.venv
 
+# Set working directory before copying files
+WORKDIR /app
+
 # Copy lockfile and pyproject.toml first (better caching)
-COPY uv.lock pyproject.toml /app/
+COPY uv.lock pyproject.toml .
 
 # Install dependencies (frozen lockfile, no dev dependencies)
 RUN uv sync --frozen --no-dev
