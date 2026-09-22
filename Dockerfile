@@ -45,4 +45,4 @@ EXPOSE 8000
 STOPSIGNAL SIGTERM
 
 # Run migrations if alembic is set up
-CMD ["sh", "-c", "cd /app && (if [ -d alembic ]; then reflex db migrate; fi) && exec reflex run --env prod --backend-only --backend-port ${PORT:-8000} --host 0.0.0.0"]
+CMD ["sh", "-c", "cd /app && (if [ -d alembic ]; then reflex db migrate; fi) && exec reflex run --env prod --backend-only --backend-port ${PORT:-8000}"]
