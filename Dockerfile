@@ -10,22 +10,16 @@ ENV PATH="/root/.local/bin/uv:$PATH"
 # Install uv
 RUN pip install "uv==${UV_VERSION}"
 
+WORKDIR /app
+
 # Create venv
 RUN uv venv /app/.venv
-
-WORKDIR /app
 
 # Copy all source first (uv sync needs src/ for editable install)
 COPY . /app/
 
 # Install dependencies (frozen lockfile, no dev dependencies)
 RUN uv sync --frozen --no-dev
-
-# Prepare Reflex (init is needed to validate the app structure)
-RUN /app/.venv/bin/reflex init
-
-# Export app for production
-RUN /app/.venv/bin/reflex export --backend-only --no-zip
 
 # ---------- Production stage ----------
 FROM python:3.12-slim AS production
@@ -39,10 +33,7 @@ WORKDIR /app
 COPY --from=builder /app/.venv /app/.venv
 
 # Copy source code
-COPY --from=builder /app /app
-
-# Copy exported frontend (from reflex export)
-COPY --from=builder /app/.web /app/.web
+COPY --from=builder /app /app/
 
 # Create required directories
 RUN mkdir -p /app/data /app/uploaded_files
