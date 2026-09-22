@@ -4,15 +4,17 @@ from reflex.plugins import RadixThemesPlugin
 from decouple import config
 
 DATABASE_URL = config("DATABASE_URL", default="")
+REFLEX_API_URL = config("REFLEX_API_URL", default="")
 #DATABASE_URL = config("DATABASE_URL_TEST")
 
 config = rx.Config(
-    app_name="link_bio",
+    app_name="link-bio",
     cors_allowed_origins=[
         "http://localhost:3000",
         "https://cpkm.com.co"
     ],
     db_url= DATABASE_URL,
+    api_url=REFLEX_API_URL,
     backend_host="0.0.0.0",
     show_built_with_reflex=False,
     plugins=[
