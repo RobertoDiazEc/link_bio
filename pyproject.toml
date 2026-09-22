@@ -1,0 +1,29 @@
+[project]
+name = "link-bio"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "RobertoDiazEc", email = "robertodiazec@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.20.0",
+    "bcrypt>=5.0.0",
+    "fastapi[standard]>=0.141.1",
+    "fpdf2>=2.8.8",
+    "jinja2>=3.1.6",
+    "psycopg2-binary>=2.9.13",
+    "psycopg[binary]>=3.3.6",
+    "python-decouple>=3.8",
+    "python-dotenv>=1.2.3",
+    "reflex==0.9.12",
+    "sqlmodel>=0.0.46",
+]
+
+[project.scripts]
+link-bio = "link_bio:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"

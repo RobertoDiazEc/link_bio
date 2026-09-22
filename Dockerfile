@@ -1,38 +1,58 @@
-# This Dockerfile is used to deploy a simple single-container Reflex app instance.
-FROM python:3.12
+# Multi-stage Dockerfile for Railway deployment
+# Uses uv for fast, reproducible builds from uv.lock
 
+# ---------- Builder stage ----------
+FROM python:3.12-slim AS builder
 
-# Copy local context to `/app` inside container (see .dockerignore)
-WORKDIR /app
-COPY . .
+ENV UV_VERSION=0.5.7
+ENV PATH="/root/.local/bin/uv:$PATH"
 
-ENV VIRTUAL_ENV=/app/.venv_docker
+# Install uv
+RUN pip install "uv==${UV_VERSION}"
+
+# Create venv
+RUN uv venv /app/.venv
+
+# Copy lockfile and pyproject.toml first (better caching)
+COPY uv.lock pyproject.toml /app/
+
+# Install dependencies (frozen lockfile, no dev dependencies)
+RUN uv sync --frozen --no-dev
+
+# Copy source code
+COPY . /app/
+
+# Prepare Reflex (init is needed to validate the app structure)
+RUN /app/.venv/bin/reflex init
+
+# Export app for production
+RUN /app/.venv/bin/reflex export --backend-only --no-zip
+
+# ---------- Production stage ----------
+FROM python:3.12-slim AS production
+
+ENV VIRTUAL_ENV=/app/.venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN python3.12 -m venv $VIRTUAL_ENV 
+WORKDIR /app
 
-# Install app requirements and reflex in the container
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy installed dependencies from builder
+COPY --from=builder /app/.venv /app/.venv
 
-# Deploy templates and prepare app
-#RUN reflex init --loglevel debug
+# Copy source code
+COPY --from=builder /app /app
 
-# Needed until Reflex properly passes SIGTERM on backend.
-STOPSIGNAL SIGKILL
+# Copy exported frontend (from reflex export)
+COPY --from=builder /app/.web /app/.web
 
-# Always apply migrations before starting the backend.
-#CMD [ -d alembic ] && reflex db migrate;\
-#   exec reflex run --env prod --backend-only
+# Create required directories
+RUN mkdir -p /app/data /app/uploaded_files
 
-#CMD ["bash", "-c", "if [ -d alembic ]; then reflex db migrate;"]
-# CMD [ -d alembic ] && reflex db migrate; 
-# ENTRYPOINT ["reflex", "run", "--env", "prod", "--backend-only", "--loglevel", "debug" ]  
-# Copia start.sh al contenedor
-COPY start.sh /app/start.sh
+# Expose backend port (Railway sets PORT env var)
+EXPOSE 8000
 
-# Asegúrate de que sea ejecutable
-RUN chmod +x /app/start.sh
+# Let Reflex handle shutdown gracefully
+STOPSIGNAL SIGTERM
 
-# Configura el script como el comando principal
-CMD ["bash", "/app/start.sh"]  
+# Run migrations if alembic is set up
+CMD ["sh", "-c", "cd /app && (if [ -d alembic ]; then reflex db migrate; fi) && exec reflex run --env prod --backend-only --backend-port ${PORT:-8000}"]

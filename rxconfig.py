@@ -1,4 +1,5 @@
 import reflex as rx
+from reflex.plugins.sitemap import SitemapPlugin
 from decouple import config
 
 DATABASE_URL = config("DATABASE_URL")
@@ -12,5 +13,6 @@ config = rx.Config(
     ],
     db_url= DATABASE_URL,
     show_built_with_reflex=False,
-    plugins=[]
+    plugins=[rx.plugins.TailwindV4Plugin()],
+    disable_plugins =[SitemapPlugin],
 )
