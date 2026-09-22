@@ -8,6 +8,12 @@ import os
 api_contrato_app = FastAPI(title="API for Download Contrato")
 
 
+# Healthcheck endpoint (for Railway)
+@api_contrato_app.get("/api/health")
+def health_check():
+    return {"status": "ok", "service": "link-bio"}
+
+
 # Add routes to the FastAPI app
 @api_contrato_app.get("/api/contrato-pdf/{supplier_id}")
 async def get_contrato_pdf(supplier_id: str):
