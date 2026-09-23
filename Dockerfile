@@ -51,5 +51,5 @@ EXPOSE 8080
 # Let Reflex handle shutdown gracefully
 STOPSIGNAL SIGTERM
 
-# Run Reflex backend on Railway default port
-CMD ["reflex", "run", "--env", "prod", "--backend-only", "--backend-port", "8080"]
+# Run Reflex backend on Railway's PORT
+CMD ["sh", "-c", "exec reflex run --env prod --backend-only --backend-port ${PORT:-8080}"]
