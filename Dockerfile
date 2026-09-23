@@ -52,4 +52,4 @@ EXPOSE 8080
 STOPSIGNAL SIGTERM
 
 # Run Reflex backend on Railway's PORT
-CMD ["sh", "-c", "exec reflex run --env prod --backend-only --backend-port ${PORT:-8080}"]
+CMD ["sh", "-c", "exec reflex run --env prod --backend-only --backend-port ${PORT:-8000}"]
