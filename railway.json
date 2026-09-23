@@ -1,1 +1,1 @@
-{"$schema": "https://railway.com/railway.schema.json", "build": {"builder": "DOCKERFILE"}, "deploy": {"healthcheckPath": "/api/health", "healthcheckTimeout": 120}}
+{"$schema": "https://railway.com/railway.schema.json", "build": {"builder": "DOCKERFILE"}, "deploy": {"healthcheckPath": "/ping", "healthcheckTimeout": 120}}
