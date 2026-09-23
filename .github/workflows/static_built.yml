@@ -8,11 +8,11 @@ jobs:
   build:
     if: github.repository == 'RobertoDiazEc/link_bio'
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
       pull-requests: write
-      
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -21,24 +21,25 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      
+
       - name: Install uv
         run: pip install uv
 
       - name: Create env file
         run: |
-          cat << EOF > .env
+          cat << 'HEREDOC' > .env
             DATABASE_URL=${{ secrets.DATABASE_URL }}
             ROUTEANEXO2=${{ secrets.ROUTEANEXO2 }}
             ROUTEAPI_PDF=${{ secrets.ROUTEAPI_PDF }}
-          EOF  
+            REFLEX_API_URL=https://api.cpkm.com.co
+          HEREDOC
 
       - name: Sync dependencies
         run: uv sync --frozen
 
       - name: Export frontend
         run: |
-            API_URL=https://api.cpkm.com.co uv run reflex export --frontend-only
+            REFLEX_API_URL=https://api.cpkm.com.co uv run reflex export --frontend-only
             rm -rf public
             unzip frontend.zip -d public
             rm -f  frontend.zip
