@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-       
+      
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -22,9 +22,9 @@ jobs:
         with:
           python-version: '3.12'
       
-      - name: Cambiar a la carpeta de scripts 
-        run: cd ./link_bio
-      
+      - name: Install uv
+        run: pip install uv
+
       - name: Create env file
         run: |
           cat << EOF > .env
@@ -33,19 +33,15 @@ jobs:
             ROUTEAPI_PDF=${{ secrets.ROUTEAPI_PDF }}
           EOF  
 
-      - name: Install dependencies 
-        run: | 
-            python -m venv .venv 
-            source .venv/bin/activate
-            pip install --upgrade pip
-            pip install reflex --upgrade
-            pip install -r requirements.txt
-            reflex init
-            API_URL=https://api.cpkm.com.co reflex export --frontend-only
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Export frontend
+        run: |
+            API_URL=https://api.cpkm.com.co uv run reflex export --frontend-only
             rm -rf public
             unzip frontend.zip -d public
             rm -f  frontend.zip
-            deactivate  
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -54,4 +50,3 @@ jobs:
           commit_user_name: RobertoDiazEc [github action]
           commit_user_email: robertodiazec@gmail.com
           commit_author: robertodiaz
-          
