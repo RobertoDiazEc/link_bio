@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/railwayapp/main/refs/heads/master/railway-template.json",
+  "build": {
+    "builder": "DOCKER"
+  },
+  "deploy": {
+    "startCommand": "cd /app && (if [ -d alembic ]; then reflex db migrate || true; fi) && exec reflex run --env prod --backend-only --backend-port ${PORT:-8000}",
+    "healthcheck": {
+      "path": "/api/health",
+      "interval": 120,
+      "timeout": 3,
+      "threshold": 3
+    }
+  }
+}
