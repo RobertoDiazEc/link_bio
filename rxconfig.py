@@ -8,7 +8,7 @@ REFLEX_API_URL = config("REFLEX_API_URL", default="")
 #DATABASE_URL = config("DATABASE_URL_TEST")
 
 config = rx.Config(
-    app_name="link-bio",
+    app_name="link_bio",
     cors_allowed_origins=[
         "http://localhost:3000",
         "https://cpkm.com.co"
