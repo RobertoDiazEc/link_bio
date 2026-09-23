@@ -39,10 +39,10 @@ COPY --from=builder /app /app/
 RUN mkdir -p /app/data /app/uploaded_files
 
 # Expose backend port (Railway uses PORT env var)
-EXPOSE 8000
+EXPOSE 8080
 
 # Let Reflex handle shutdown gracefully
 STOPSIGNAL SIGTERM
 
-# Run Reflex backend (Railway sets PORT; Reflex listens on it)
+# Run Reflex backend on Railway default port
 CMD ["sh", "-c", "cd /app && (if [ -d alembic ]; then reflex db migrate || true; fi) && exec reflex run --env prod --backend-only --backend-port 8080"]
