@@ -1,0 +1,1 @@
+var e={PING:`https://api.cpkm.com.co/ping`,EVENT:`wss://api.cpkm.com.co/_event`,UPLOAD:`https://api.cpkm.com.co/_upload`,AUTH_CODESPACE:`https://api.cpkm.com.co/auth-codespace`,HEALTH:`https://api.cpkm.com.co/_health`,ALL_ROUTES:`https://api.cpkm.com.co/_all_routes`,TRANSPORT:`websocket`,TEST_MODE:!1};export{e as t};
