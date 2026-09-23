@@ -29,9 +29,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /app
 
-# Install system packages (unzip for bun, ca-certificates for HTTPS)
+# Install system packages (unzip for bun, curl for downloads, ca-certificates for HTTPS)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
+    curl \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
