@@ -2,14 +2,6 @@ import reflex as rx
 
 from ..styles.colors import Color
 from ..ui.routes import Route
-from datetime import datetime, timezone
-
-
-class MomentState(rx.State):
-    date_now: datetime = datetime.now(timezone.utc)
-
-    def update(self):
-        self.date_now = datetime.now(timezone.utc)
 
 
 def navbar_link(text: str, url: str) -> rx.Component:
@@ -53,7 +45,7 @@ def navbar() -> rx.Component:
                 ),
                
                 rx.hstack(
-                    rx.badge(rx.moment(MomentState.date_now, format="YYYY-MM-DD"),color= Color.CONTENT.value,),
+                    rx.badge(rx.moment(format="YYYY-MM-DD"),color= Color.CONTENT.value,),
                     navbar_link("Servicios", Route.SERVICIOS.value),
                     navbar_link("Productos", Route.PRODUCTOS.value),
                     navbar_link("Comunidad", Route.COMUNIDAD.value),
