@@ -1,1 +1,1 @@
-{"$schema": "https://railway.com/railway.schema.json", "build": {"builder": "DOCKERFILE"}, "deploy": {"startCommand": "cd /app && (if [ -d alembic ]; then reflex db migrate || true; fi) && exec reflex run --env prod --backend-only --backend-port 8080", "healthcheckPath": "/api/health", "healthcheckTimeout": 3}}
+{"$schema": "https://railway.com/railway.schema.json", "build": {"builder": "DOCKERFILE"}, "deploy": {"healthcheckPath": "/api/health", "healthcheckTimeout": 3}}
