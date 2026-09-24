@@ -68,6 +68,12 @@ class backState(rx.State):
         self.cliente_sesion = UserSesion()
         self.leasing_cliente = LeasingCli()
         self.tarifas_cliente = Tarifas()
+        self.val_tipo_vehiculo = ""
+        self.val_operacion = ""
+        self.val_servicio = ""
+        self.val_sector = ""
+        self.val_dimension = ""
+        self.val_kilometros = "0"
         self.acceso_key = False
         self.check_empresa_acepta = False
         self.num_intentos = 0
@@ -100,6 +106,12 @@ class backState(rx.State):
         self.cliente_sesion = UserSesion()
         self.tarifas_cliente= Tarifas()
         self.dimensionesall= []
+        self.val_tipo_vehiculo = ""
+        self.val_operacion = ""
+        self.val_servicio = ""
+        self.val_sector = ""
+        self.val_dimension = ""
+        self.val_kilometros = "0"
         self.acceso_key = False
         self.num_intentos = 0
         self.acceso_auth= False 
@@ -121,6 +133,9 @@ class backState(rx.State):
         Args:
             files: Los archivos subidos.
         """
+        if not files:
+            return rx.toast.info("Selecciona una imagen antes de subir.")
+
         current_file = files[0]
         upload_data = await current_file.read()
         outfile = (
@@ -141,6 +156,9 @@ class backState(rx.State):
         Args:
             files: Los archivos subidos.
         """
+        if not files:
+            return rx.toast.info("No hay una imagen seleccionada para borrar.")
+
         current_file = files[0]
         outfile = (
             rx.get_upload_dir() / current_file.name
@@ -261,32 +279,32 @@ class backState(rx.State):
                 rx.window_alert("Registro creado exitosamente.")
 
     @rx.event
-    def change_value_tipo(self, value: str):
+    def change_value_tipo(self, value: str | None):
         """Change the select value var."""
-        self.val_tipo_vehiculo = value
+        self.val_tipo_vehiculo = value or ""
         self.clear_selected()
         self.llenar_operaciones() 
 
     @rx.event
-    def change_value_operacion(self, value: str):
+    def change_value_operacion(self, value: str | None):
         """Change the select value var."""
-        self.val_operacion = value
+        self.val_operacion = value or ""
         self.llenar_dimensiones()
     
     @rx.event
-    def change_value_servicio(self, value: str):
+    def change_value_servicio(self, value: str | None):
         """Change the select value var."""
-        self.val_servicio = value 
+        self.val_servicio = value or ""
 
     @rx.event
-    def change_value_sector(self, value: str):
+    def change_value_sector(self, value: str | None):
         """Change the select value var."""
-        self.val_sector = value 
+        self.val_sector = value or ""
 
     @rx.event
-    def change_value_dimension(self, value: str):
+    def change_value_dimension(self, value: str | None):
         """Change the select value var."""
-        self.val_dimension = value 
+        self.val_dimension = value or ""
 
     @rx.event
     def llenar_dimensiones(self):
@@ -368,7 +386,12 @@ class backState(rx.State):
             nombrempresa = self.user_actual.nombre_empresa,           
         )
         nombre_representante=self.user_actual.representante
-        nombreimagen=f"{ROUTEANEXO2}Anexo2cpk.png"
+        nombreimagen = (
+            Path(__file__).resolve().parents[2] / "assets" / "pdfs" / "Anexo2cpk.png"
+        )
+        if not nombreimagen.is_file():
+            return rx.toast.error("No se encontró el recurso Anexo2cpk.png.")
+
         outfile = Path(rx.get_upload_dir()) / nombrearchivo
         pdf = FPDF()
         pdf.set_title("CPK - Arrendamiento")
@@ -450,7 +473,7 @@ class backState(rx.State):
         pdf.add_page()
         pdf.set_left_margin(25)
         pdf.set_font("Arial", size=12)
-        pdf.image(nombreimagen, 5,5,195,180)
+        pdf.image(str(nombreimagen), 5, 5, 195, 180)
         pdf.include_js('print(true);')
         pdf.output(outfile)
         

@@ -8,11 +8,21 @@ from ..styles.styles import SizeTxt
 import link_bio.styles.styles  as styles
 import link_bio.styles.colors  as colors
 from ..ui.base_page import base_page
+from ..state.auth import AuthState
 
 
 #@rx.page(title="CPK | Servicios")
 def servicios_page() -> rx.Component:
     mi_child=  rx.box(
+        rx.cond(
+            AuthState.useregistro == "T",
+            rx.callout(
+                "Usuario creado con éxito",
+                color_scheme="green",
+                width="100%",
+            ),
+            rx.fragment(),
+        ),
         rx.box(
             #header_base_img(IMG_SERVICIOS),       
             rx.heading(

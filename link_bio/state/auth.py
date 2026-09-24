@@ -1,6 +1,6 @@
 """The authentication state."""
 import reflex as rx
-from datetime import datetime
+from datetime import datetime, timezone
 import re
 import bcrypt
 
@@ -28,10 +28,24 @@ class AuthState(baseState):
     representante: str
 
     @rx.event
-    def signup(self):
-        """Sign up a user."""
+    def signup(self, form_data: dict):
+        """Register a user from the signup form."""
+        self.nombre = form_data.get("nombre", "").strip()
+        self.apellido = form_data.get("apellido", "").strip()
+        self.email = form_data.get("email", "").strip()
+        self.celular = form_data.get("celular", "").strip()
+        self.ciudad = form_data.get("ciudad", "").strip()
+        self.username = form_data.get("username", "").strip()
+        self.password = form_data.get("password", "")
+        self.confirm_password = form_data.get("confirm_password", "")
+        self.nombre_empresa = form_data.get("nombre_empresa", "").strip()
+        self.nitrut = form_data.get("nitrut", "").strip()
+        self.representante = form_data.get("representante", "").strip()
+
+        if not form_data.get("terms"):
+            return rx.window_alert("Debes aceptar los terminos y condiciones.")
+
         with rx.session() as session:
-            
             pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
             if not re.match(pattern, self.email):
                 return rx.window_alert("Correo no válido")
@@ -57,13 +71,13 @@ class AuthState(baseState):
                 nombre_empresa=self.nombre_empresa,
                 nitrut=self.nitrut,
                 representante=self.representante,              
-                created_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                created_at=datetime.now(timezone.utc),
                 )
             session.add(self.user)
             session.expire_on_commit = False
             session.commit()
             self.useregistro = "T"
-            return rx.redirect(Route.LEASING.value)
+            return rx.redirect(Route.SERVICIOS.value)
     
     @rx.event
     def reset_login(self):

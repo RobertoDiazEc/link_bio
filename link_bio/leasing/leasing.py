@@ -133,7 +133,7 @@ def leasing_page() -> rx.Component:
             backState.acceso_auth,                                
             rx.flex(
                 rx.box( 
-                    rx.form.root(
+                    rx.form(
                         rx.flex(
                             rx.section(
                                 rx.flex(
