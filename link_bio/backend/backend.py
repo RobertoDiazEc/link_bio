@@ -16,7 +16,21 @@ from ..views.empresa.empresadet import EmpresaContratoCpk
 from ..ui.routes import Route
 from ..models import ClienteL, UserSesion, LeasingCli, Dimensiones, Tipo_Vehiculo, Servicio, Operacion, Sector, Tarifas
 
-ROUTEAPI_PDF = config("ROUTEAPI_PDF")
+def _pdf_api_base_url() -> str:
+    """Return the public PDF API base URL for the current environment."""
+    configured_route = config("ROUTEAPI_PDF", default="").rstrip("/")
+    api_url = config("REFLEX_API_URL", default="http://localhost:8000").rstrip("/")
+
+    if configured_route and not (
+        os.getenv("RAILWAY_ENVIRONMENT")
+        and configured_route.startswith("http://localhost")
+    ):
+        return configured_route
+
+    return f"{api_url}/api/contrato-pdf"
+
+
+ROUTEAPI_PDF = _pdf_api_base_url()
 ROUTEANEXO2 = config("ROUTEANEXO2")
 
 class backState(rx.State):
@@ -478,7 +492,10 @@ class backState(rx.State):
         pdf.output(outfile)
         
         self.outfilepdf= "/uploaded_files/{nombrearchivo}"
-        pdfdownload=f"{ROUTEAPI_PDF}{self.leasing_cliente.id}-{self.cliente_sesion.id}-{self.user_actual.username}" 
+        pdfdownload = (
+            f"{ROUTEAPI_PDF}/{self.leasing_cliente.id}-"
+            f"{self.cliente_sesion.id}-{self.user_actual.username}"
+        )
         self.limpiar_pantalla()
         return rx.redirect(pdfdownload, is_external=True)
 
